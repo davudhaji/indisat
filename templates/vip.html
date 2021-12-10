@@ -1,0 +1,139 @@
+{% extends 'layoutdash.html' %}
+{% block body %}
+{% load static %}
+<style>
+.card{
+    z-index:0;
+}
+
+</style>
+   <div class="container page__container">
+    <br><br><br><br>
+                <form action="#" class="mb-3 border-bottom pb-3">
+                   
+
+
+
+                <div class="row">
+
+                    <div class="col-md-6">
+                        <div class="card">
+                            <div class="card-body">
+
+                                <div class="d-flex flex-column flex-sm-row">
+                                    <a href="#" class="avatar mb-3 w-xs-plus-down-100 mr-sm-3">
+                                        <img src="{% static 'images/vip.png'%}" alt="Card image cap" class="avatar-course-img">
+                                    </a>
+                                    <div class="flex" style="min-width: 200px;">
+                                        <div class="d-flex">
+                                            <div>
+                                                <h4 class="card-title mb-1"><a href="#">VIP</a></h4>
+                                                <p class="text-muted">3 Gün Ərzinde VIP Elan yerləşdirə bilərsiniz və yerləsdirdiyiniz elanlar VIP bölməsinə düşərək öz katiqoriyasına uyğun yerlərdə üstdə görsənəcək  </p>
+                                            </div>
+                                            
+                                        </div>
+                                        <div class="d-flex align-items-end">
+                                            <div class="d-flex flex flex-column mr-3">
+                                                <div class="d-flex align-items-center py-2 border-bottom">
+                                                    <span class="mr-2">$4</span>
+                                                    <small class="text-muted ml-auto">Başlanğıc səviyə elanlar</small>
+                                                </div>
+                                                <div class="d-flex align-items-center py-2">
+                                                    <span class="badge badge-vuejs mr-2">VIP</span>
+                                                    <span class="badge badge-soft-secondary">500 + Baxış</span>
+                                                </div>
+                                                <a href="/user/buy/vip" class="btn btn-primary">Almaq</a>
+                                            </div>
+                                            
+                                        </div>
+                                      
+                                    </div>
+                                    
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6">
+                        <div class="card">
+                            <div class="card-body">
+
+                                <div class="d-flex flex-column flex-sm-row">
+                                    <a href="#" class="avatar mb-3 w-xs-plus-down-100 mr-sm-3">
+                                        <img src="{% static 'images/diamond.png' %}" alt="Card image cap" class="avatar-course-img">
+                                    </a>
+                                    <div class="flex" style="min-width: 200px;">
+                                        <div class="d-flex">
+                                            <div>
+                                                <h4 class="card-title mb-1"><a href="#">DIAMOND</a></h4>
+                                                <p class="text-muted">DIAMOND Paketində siz 6 gün elan yerləşdirə bilərsiniz. Bu paketdəki elanların fərqi ondadırki sizin yerləşdirdiyiniz elanlar hansı katiqoriyaya aiddirsə onun baş katiqoriyasında cıxır məsəlçün: Telefon yerləsdirmizinizsə telefon bölməsində və hemçin elektronik əşyalar bölməsində üstdə DIAMOND elanlar icərisində çıxır</p>
+                                            </div>
+                                            
+                                        </div>
+                                        <div class="d-flex align-items-end">
+                                            <div class="d-flex flex flex-column mr-3">
+                                                <div class="d-flex align-items-center py-2 border-bottom">
+                                                    <span class="mr-2">$6</span>
+                                                    <small class="text-muted ml-auto">Orta Seviye Elanlar</small>
+                                                </div>
+                                                <div class="d-flex align-items-center py-2">
+                                                    <span class="badge badge-gitlab mr-2">DIAMOND</span>
+                                                    <span class="badge badge-soft-secondary">1200+ Baxış</span>
+                                                </div>
+                                                <a href="/user/buy/diamond" class="btn btn-primary">Almaq</a>
+                                                
+                                            </div>
+                                            
+                                        </div>
+                                        
+                                    </div>
+                                    
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6">
+                        <div class="card">
+                            <div class="card-body">
+
+                                <div class="d-flex flex-column flex-sm-row">
+                                    <a href="#" class="avatar mb-3 w-xs-plus-down-100 mr-sm-3">
+                                        <img src="{% static 'images/premium.png' %}" alt="Card image cap" class="avatar-course-img">
+                                    </a>
+                                    <div class="flex" style="min-width: 200px;">
+                                        <div class="d-flex">
+                                            <div>
+                                                <h4 class="card-title mb-1"><a href="#">PREMIUM</a></h4>
+                                                <p class="text-muted">PREMIUM Paketində siz 1 həftə Premium elan yerləsdirə bilərsiniz.Bu elanlar Saytin Ana səyfəsində ve bütün katiqoriyalarda üstdə görsənəcəkdir.</p>
+                                            </div>
+                                            
+                                        </div>
+                                        <div class="d-flex align-items-end">
+                                            <div class="d-flex flex flex-column mr-3">
+                                                <div class="d-flex align-items-center py-2 border-bottom">
+                                                    <span class="mr-2">$9</span>
+                                                    <small class="text-muted ml-auto">Üst səviyə elanlar</small>
+                                                </div>
+                                                <div class="d-flex align-items-center py-2">
+                                                    <span class="badge badge-angular mr-2">PREMIUM</span>
+                                                    <span class="badge badge-soft-secondary">2000+ Baxış</span>
+                                                </div>
+                                                <a href="/user/buy/premium" class="btn btn-primary">Almaq</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+
+                    
+
+                </div>
+
+            </div>
+{% endblock body %}

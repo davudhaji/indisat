@@ -1,0 +1,23 @@
+{% extends 'layoutdash.html' %}
+
+{% block body %}
+    <br><br><br><br>
+    <div class="container">
+        
+        <div class="alert alert-info">
+            <strong>Info!</strong> Facebook ve Ya Google İle Daxil olmusunuzsa parolu dəyişdirə bilmərsiniz.
+        </div>
+    </div>
+    <br><br>
+    <div class="container">
+    <ul>
+    </ul><br>
+    <form method="POST">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <br><br>
+        <button type="submit" class="btnx" style="border-radius:2px; border-width:1px;"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Yenile</font></font></button>
+    </form>
+    </div>
+    
+{% endblock body %}

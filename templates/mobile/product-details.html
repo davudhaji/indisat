@@ -1,0 +1,66 @@
+{% extends 'mobile/layout.html' %}
+
+{% block body %}
+<div class="segments-page">
+		<div class="container">
+			<div class="desc-short"><a href="/">Ev</a><span class="fa fa-angle-right"></span><a href="#">{{article.get_status_display}}</a><span class="fa fa-angle-right"></span>{{article.title}}</div>
+			<br>
+			<div class="product-details">
+
+				<div class="contents">
+					<div class="product-d-slide owl-carousel owl-theme">
+						<div class="content">
+							<img src="{{article.image.url}}" alt="{{article.title}}">
+						</div>
+						{% if articleImages %}
+                            {% for art in articleImages %}
+                                <div class="content">
+                                    <img src="{{art.product_image.url}}" alt="{{article.title}}">
+                                </div>
+                            {% endfor %}
+                        {% endif %}
+					</div>
+					<div class="desc-short">
+						<h4>{{ article.title }}</h4>
+						<h5>&#8916;{{article.qiymet}}</h5>
+						
+					</div>
+					<div class="share-media">
+						<h5>Share</h5>
+						<ul>
+							<li><a href=""><i class="fa fa-facebook"></i></a></li>
+							<li><a href=""><i class="fa fa-twitter"></i></a></li>
+							<li><a href=""><i class="fa fa-google"></i></a></li>
+						</ul>
+					</div>
+					<div class="desc-long">
+						<h5>Haqqında</h5>
+						<p><b>{{ article.content | safe }}</b></p>
+						
+					</div>
+				</div>
+			<br><br>
+
+		<table class="centered">
+			<thead>
+			<tr>
+				<th>İsdifadəçi adı</th>
+				<th>Nömrə</th>
+				<th>Qiymət</th>
+			</tr>
+			</thead>
+
+			<tbody>
+			<tr>
+				<td>{% if article.user %}{{article.user}} {% else %}{{article.author.first_name}}{% endif %}</td>        
+				<td>{{article.nomre}}</td>
+				<td>&#8916;{{article.qiymet}}</td>
+			</tr>
+			</tbody>
+    	</table>
+			</div>
+		</div>
+	</div>
+
+{% endblock body %}
+

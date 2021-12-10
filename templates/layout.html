@@ -1,0 +1,149 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="tr-TR" prefix="og: http://ogp.me/ns#">
+<head>
+    {% if a %}
+        <meta name="description" content="{{a}} | indisat.az"/>
+        <title>Indisat.az - Pulsuz Elan Sayti | {{a}}</title>
+        <meta property="og:site_name" content="Indisat.az">
+        <meta property="og:title" content="{{ a }} | Indisat.az">
+        <meta property="og:description" content="{{ a }}">
+        <meta name="title" content="{{a}} | Indisat.az">
+
+    {% elif salam %}
+        <meta name="description" content="Davud Haji | indisat.az"/>
+        <title> Davud Haji | About </title>
+        <meta property="og:site_name" content="Indisat.az">
+        <meta property="og:title" content="Davud Haji | Indisat.az">
+        <meta property="og:description" content="Davud Haci">
+        <meta name="title" content="Davud Haji | Indisat.az">
+
+    {% elif elan %}
+        <meta name="description" content="Elan Yerlesdir"/>
+        <title> Pulsuz Elan yerləşdir </title>
+        <meta property="og:site_name" content="Indisat.az">
+        <meta property="og:title" content="Elan yerlesdir">
+        <meta property="og:description" content="Elan Yerlesdir">
+        <meta name="title" content="Elan yerlesdir">
+
+
+    {% else %}
+        <meta name="description" content="Pusuz Elan Sayti Daxil ol ve elan yerlesdir.Isder Sat isdersende ucuz qiymete isdediyin mehsulu al ! indisat.az"/>
+        <title>IndiSat - Pulsuz Elan Sayti, Elan Yerlesdir , Al ,Sat</title>
+        <meta property="og:site_name" content="Indisat.az">
+        <meta name="title" content="indisat.az | Pulsuz elan sayti">
+    {% endif %}
+    <!-- META TAGS -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="yandex-verification" content="26764ea1e033811d" />
+    <!-- LINK TAGS -->
+
+
+
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <!-- <link rel='stylesheet' href="{% static 'revslider/public/assets/css/settings.css'%}" type='text/css' media='all' />
+    <link rel='stylesheet' href="{% static 'css/woocommerce-layout.css' %}" type='text/css' media='all' /> -->
+    <link rel='stylesheet' href="{% static 'css/main.min.css' type='text/css'%}" media='all' />
+    <link rel='stylesheet' href="{% static 'css/style-customabae.css'%}" type='text/css' media='all' />
+	<link rel="icon" type="image/x-icon" href="{% static 'upload/alverust.png'%}" />
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-K8MPBVQ');</script>
+    <!-- End Google Tag Manager -->
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-WX0RF5MZGF"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-WX0RF5MZGF');
+    </script>
+
+
+
+
+
+</head>
+<body class="home page page-id-12 page-parent page-template-default btx-layout btx-layout--wide btx-layout-responsive btx-layout--topnav btx-layout--fixednav" data-scheme="light" data-layout="wide">
+        <!-- Google Tag Manager (noscript) -->
+        <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-K8MPBVQ"
+        height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+        <!-- End Google Tag Manager (noscript) -->
+ <!--    <style>
+    .loader {
+        position: fixed;
+        z-index: 99;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .loader > img {
+        width: 500px;
+    }
+
+    .loader.hidden {
+        animation: fadeOut 1s;
+        animation-fill-mode: forwards;
+    }
+
+    @keyframes fadeOut {
+        100% {
+            opacity: 0;
+            visibility: hidden;
+        }
+    }
+
+
+    </style>
+    <div class="loader">
+        <img src="{% static 'images/loader2.gif' %}" />
+    </div> -->
+    {% include 'includes/nvbr.html' %}
+
+    {% block body %}
+
+
+    {% endblock body %}
+
+
+    <br>
+    {% include 'includes/footer.html' %}
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-K8MPBVQ"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    <script>
+        (function(d, w, c) {
+            w.ChatraID = 'hGFwRY3x5ydfeNBYg';
+            var s = d.createElement('script');
+            w[c] = w[c] || function() {
+                (w[c].q = w[c].q || []).push(arguments);
+            };
+            s.async = true;
+            s.src = 'https://call.chatra.io/chatra.js';
+            if (d.head) d.head.appendChild(s);
+        })(document, window, 'Chatra');
+    </script>
+    <!-- /Chatra {/literal} -->
+ <!--    <script>
+    window.addEventListener("load", function () {
+        const loader = document.querySelector(".loader");
+        loader.className += " hidden"; // class "loader hidden"
+    });
+    </script> -->
+</body>
+
+</html>

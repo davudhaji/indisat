@@ -1,0 +1,28 @@
+{% extends 'layout.html' %}
+{% load static %}
+
+
+
+{% block body %}
+    {% include 'che.html' %}
+   <br><br>
+   <form method="get">
+
+
+    <nav aria-label="Page navigation example">
+
+        <ul class="pagination justify-content-center">
+            <li class="page-item">
+                <a class="page-link"><button name="page"  value="{{number}} azalt">Əvvəlki Səyfə</button></a>
+            </li>
+
+            <li class="page-item">
+                <a class="page-link"><button  name="page" value="{{number}} artir">Sonrakı Səyfə</button></a>
+            </li>
+        </ul>
+    </nav>
+
+    </form>
+   <br><br>
+   <br> <br><br><br>
+{% endblock body %}

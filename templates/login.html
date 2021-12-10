@@ -1,0 +1,39 @@
+{% extends 'layout.html' %}
+{% load static %}
+{% load socialaccount %}
+{% providers_media_js %}
+
+{% block body %}
+
+<link rel='stylesheet' href='{% static 'css/bootstrap-social.css'%}' type='text/css' media='all' />
+
+<style>
+.mine{
+    padding-left:50px;
+    padding-right:50px;
+}
+
+</style>
+
+<br><br><br><br>
+<hr><br>
+<div class="container mine">
+<form method="POST">
+    {% csrf_token %}
+    {{form.as_p}}
+    <h5><b><a href="/user/register"><i>Yeni Hesab</i></a></b></h5><br>
+    <button type="submit" class="btnx" style="border-radius:2px; border-width:1px;"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Daxil Ol </font></font></button>
+    <br><br>
+
+</form>                                                                              <!--js_sdk oauth2 -->
+<a class="btn btn-block btn-social btn-facebook" href="{% provider_login_url "facebook" method="oauth2" %}">
+    <span class="fa fa-facebook"></span>Facebook Ile Daxil OL
+</a>                                                                                                                                                                                    <!-- oauth2  js_sdk -->
+<a class="btn btn-block btn-social btn-google" href="{% provider_login_url "google" %}">
+    <span class="fa fa-google"></span>Google Ile Daxil OL
+</a>
+
+</div>
+<br><br><br><br><br><br><br>
+
+{% endblock body %}

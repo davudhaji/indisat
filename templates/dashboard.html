@@ -1,0 +1,522 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>IndiSat.az - Elanlariniz</title>
+    <link rel="icon" type="image/x-icon" href="{% static 'upload/alverdash.png'%}" />
+
+    <!-- Prevent the demo from appearing in search engines -->
+    <meta name="robots" content="noindex">
+
+    <!-- Perfect Scrollbar
+    <link type="text/css" href="{% static 'dbcss/vendor/perfect-scrollbar.css'%}" rel="stylesheet">
+    -->
+    <!-- App CSS -->
+    <link type="text/css" href="{% static 'dbcss/css/app.css'%}" rel="stylesheet">
+    <link type="text/css" href="{% static 'dbcss/css/app.rtl.css'%}" rel="stylesheet">
+
+    <!-- Material Design Icons -->
+    <link type="text/css" href="{% static 'dbcss/css/vendor-material-icons.css'%}" rel="stylesheet">
+    <link type="text/css" href="{% static 'dbcss/css/vendor-material-icons.rtl.css'%}" rel="stylesheet">
+
+    <!-- Font Awesome FREE Icons
+    <link type="text/css" href="{% static 'dbcss/css/vendor-fontawesome-free.css'%}" rel="stylesheet">
+    <link type="text/css" href="{% static 'dbcss/css/vendor-fontawesome-free.rtl.css'%}" rel="stylesheet">
+    -->
+    <!-- ion Range Slider
+    <link type="text/css" href="{% static 'dbcss/css/vendor-ion-rangeslider.css'%}" rel="stylesheet">
+    <link type="text/css" href="{% static 'dbcss/css/vendor-ion-rangeslider.rtl.css'%}" rel="stylesheet">
+     -->
+
+
+
+
+</head>
+
+<body class="layout-fixed">
+
+
+
+
+
+
+
+
+
+
+    <div class="preloader"></div>
+
+    <!-- Header Layout -->
+    <div class="mdk-header-layout js-mdk-header-layout">
+
+        <!-- Header -->
+
+        <div id="header" class="mdk-header bg-dark js-mdk-header m-0" data-fixed data-effects="waterfall">
+            <div class="mdk-header__content">
+
+                <div class="navbar navbar-expand-sm navbar-main navbar-dark bg-primary pl-md-0 pr-0" id="navbar" data-primary>
+                    <div class="container page__container pr-0">
+
+                        <!-- Navbar toggler -->
+                        <button class="navbar-toggler navbar-toggler-custom  d-flex mr-navbar" type="button" data-toggle="sidebar">
+                            <span class="material-icons icon-14pt">menu</span>
+                        </button>
+
+
+                        <a href="/" class="text-underline-0 navbar-brand">
+                            <span class="mr-3">
+                                <!-- LOGO -->
+                                <img src="/static/upload/alverdash.png" alt="">
+
+                            </span>
+                        </a>
+
+
+
+                        <div class="navbar-collapse collapse" id="navbarsExample03">
+                            <ul class="nav navbar-nav">
+                                <li class="nav-item dropdown">
+                                    <a href="/" class="nav-link" ><b><strong>IndiSat.az</strong></b></a>
+
+                                </li>
+                                <!-- <li class="nav-item ">
+    <a class="nav-link" href="fixed-ui-forms.html">Forms</a>
+  </li>
+  <li class="nav-item ">
+    <a class="nav-link" href="fixed-ui-charts.html">Charts</a>
+  </li> -->
+
+
+                            </ul>
+                        </div>
+
+
+
+
+
+
+
+
+                        <div class="dropdown">
+                            <a href="#" data-toggle="dropdown" data-caret="false" class="dropdown-toggle navbar-toggler navbar-toggler-dashboard border-left d-flex align-items-center ml-navbar">
+                                <span class="material-icons">laptop</span> İdarə Paneli
+                            </a>
+                            <div id="company_menu" class="dropdown-menu dropdown-menu-right navbar-company-menu">
+                                <div class="dropdown-item d-flex align-items-center py-2 navbar-company-info py-3">
+
+                                    <span class="mr-3">
+                                        <span class="material-icons mr-2">account_circle</span>                                    </span>
+                                    <span class="flex d-flex flex-column">
+                                        <strong class="h5 m-0">{{request.user.username}}</strong>
+                                    </span>
+
+                                </div>
+                                <div class="dropdown-divider"></div>
+
+                                <a class="dropdown-item d-flex align-items-center py-2" href="{% url 'user:settings' %}">
+                                    <span class="material-icons mr-2">settings</span> Settings
+                                </a>
+                                <a class="dropdown-item d-flex align-items-center py-2" href="{% url 'user:logout' %}">
+                                    <span class="material-icons mr-2">exit_to_app</span> Logout
+                                </a>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- // END Header -->
+
+        <!-- Header Layout Content -->
+        {% if messages %}
+            <br><br><br><br>
+
+            {% for message in messages %}
+
+            <div class="container">
+            {%if message.tags == "warning"  %}
+                <div class="alert alert-danger">{{ message }}</div>
+
+
+            {% else %}
+                <div class="alert alert-{{message.tags}}">{{ message }}</div>
+
+
+            {% endif %}
+            </div>
+
+
+            {% endfor %}
+
+        {% endif %}
+        <div class="mdk-header-layout__content page">
+
+
+
+            <div class="page__heading border-bottom">
+                <div class="container page__container d-flex align-items-center">
+                    <h1 class="mb-0">Elanlar</h1>
+                </div>
+            </div>
+
+            <div class="container page__container">
+                <form action="{% url 'user:dashboard' %}" class="mb-3 border-bottom pb-3" method="get">
+                        {% csrf_token %}
+                       <div class="search-form mr-3 search-form--light">
+                            <input type="text" class="form-control" name="elan" placeholder="Elan Axtar" id="searchSample02">
+                            <button class="btn" type="submit"><i class="material-icons">search</i></button>
+                        </div><br> <!-- Axtaris Hissesi altaki Divin icerisindeydi -->
+
+                    <div class="d-flex">
+
+
+
+                        <div class="form-inline ml-auto">
+                            <a href="/user/sticker" class="btn btn-success mb-3 btn-block">Elan Yarat<i class="material-icons">add_circle_outline</i></a>
+                            <div class="form-group mr-3">
+                                <label for="custom-select" class="form-label mr-1">Kategoriya</label>
+                                <select id="custom-select" class="form-control custom-select" style="width: 200px;">
+                                    <option selected>Butun Katigoriyalar</option>
+                                    <option value="1">Vue.js</option>
+                                    <option value="2">Node.js</option>
+                                    <option value="3">GitHub</option>
+                                </select>
+                            </div>
+                            <!--
+                            <div class="form-group">
+                                <label for="published01" class="form-label mr-1">Status</label>
+                                <select id="published01" class="form-control custom-select" style="width: 200px;">
+                                    <option selected>All</option>
+                                    <option value="1">In Progress</option>
+                                    <option value="3">New Releases</option>
+                                </select>
+                            </div>-->
+                        </div>
+                    </div>
+                </form>
+
+                <div class="row">
+
+                  {% for article in articles  %}
+                        <div class="col-md-3">
+                            <div class="card card__course">
+                                <div class="card-header card-header-large card-header-dark bg-dark d-flex justify-content-center">
+                                    <a class="card-header__title  justify-content-center align-self-center d-flex flex-column" href="/sticker/{{article.id}}">
+                                        <span><img src="{{article.image.url}}" class="mb-0" style="width:220px; height:150px;" alt="logo"></span>
+                                    </a>
+                                </div>
+                                <div class="p-3">
+                                    <div class="mb-2">
+                                        <span class="mr-2">
+                                            <a href="#" class="rating-link active"><i class="material-icons icon-16pt">star</i></a>
+                                            <a href="#" class="rating-link active"><i class="material-icons icon-16pt">star</i></a>
+                                            <a href="#" class="rating-link active"><i class="material-icons icon-16pt">star</i></a>
+                                            <a href="#" class="rating-link active"><i class="material-icons icon-16pt">star</i></a>
+                                            <a href="#" class="rating-link active"><i class="material-icons icon-16pt">star_half</i></a>
+                                        </span>
+                                        <strong>4.7</strong><br />
+                                        <small class="text-muted"><b>{{article.title}}</b></small>
+                                    </div>
+                                    <div class="d-flex align-items-center">
+                                        <strong class="h4 m-0">&#8916;{{article.qiymet}}</strong>
+                                        <a href="/article/delete/{{article.id}}" class="btn btn-danger ml-auto">Sil</a>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                  {% endfor %}
+
+
+
+                </div>
+                <hr>
+                <div class="d-flex flex-row align-items-center mb-3">
+                    <div class="form-inline">
+                        View
+                        <select class="custom-select ml-2">
+                            <option value="20" selected>20</option>
+                            <option value="50">50</option>
+                            <option value="100">100</option>
+                            <option value="200">200</option>
+                        </select>
+                    </div>
+                    <div class="ml-auto">
+                        20 <span class="text-muted">of 100</span> <a href="#" class="icon-muted"><i class="material-icons float-right">arrow_forward</i></a>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+        <!-- // END Header Layout Content -->
+
+    </div>
+    <!-- // END Header Layout -->
+
+    <div class="mdk-drawer  js-mdk-drawer" id="default-drawer" data-align="">
+        <div class="mdk-drawer__content">
+            <div class="sidebar sidebar-dark sidebar-left bg-dark-gray" data-perfect-scrollbar>
+
+                <div class="d-flex align-items-center sidebar-p-a sidebar-account flex-shrink-0">
+                    <a href="/" class="flex d-flex align-items-center text-underline-0">
+                        <span class="mr-3">
+                            <!-- LOGO -->
+                          <img src="/static/upload/alverdash.png" style="witdh:20px; height:40px;" alt="">
+                        </span>
+                        <span class="flex d-flex flex-column">
+                            <span class="sidebar-brand">IndiSat</span>
+                            <small>Next Generation</small>
+                        </span>
+                    </a>
+                </div>
+
+
+                <ul class="sidebar-menu">
+                    <li class="sidebar-menu-item">
+                        <a class="sidebar-menu-button" href="/">
+
+                            <i class="sidebar-menu-icon sidebar-menu-icon--left material-icons">photo_filter</i>
+                            <span class="sidebar-menu-text">Ana Səyfə</span>
+                        </a>
+                    </li>
+                </ul>
+
+
+                <div class="sidebar-block p-0">
+                    <ul class="sidebar-menu mt-0">
+                        <li class="sidebar-menu-item">
+                            <a class="sidebar-menu-button" href="/user/vip">
+                                <i class="sidebar-menu-icon sidebar-menu-icon--left material-icons">star_half</i>
+                                <span class="sidebar-menu-text"><b>VIP</b></span>
+                            </a>
+                        </li>
+                        <li class="sidebar-menu-item active">
+                            <a class="sidebar-menu-button" href="/user/dashboard">
+                                <i class="sidebar-menu-icon sidebar-menu-icon--left material-icons">queue_play_next</i>
+                                <span class="sidebar-menu-text">Elanlar</span>
+                            </a>
+                        </li>
+
+                    </ul>
+                </div>
+
+
+
+            </div>
+        </div>
+    </div>
+
+    <div class="mdk-drawer js-mdk-drawer" id="events-drawer" data-align="end">
+        <div class="mdk-drawer__content">
+            <div class="sidebar sidebar-light sidebar-left" data-perfect-scrollbar>
+
+
+
+
+                <small class="text-dark-gray px-3 py-1">
+                    <strong>Thursday, 28 Feb</strong>
+                </small>
+
+                <div class="list-group list-group-flush">
+
+                    <div class="list-group-item bg-light">
+                        <div class="row">
+                            <div class="col-auto d-flex flex-column">
+                                <small>12:30 PM</small>
+                                <small class="text-dark-gray">2 hrs</small>
+                            </div>
+                            <div class="col">
+                                <div class="d-flex flex-column flex">
+                                    <a href="#" class="text-body"><strong class="text-15pt">Marketing Team Meeting</strong></a>
+
+                                    <small class="text-muted d-flex align-items-center"><i class="material-icons icon-16pt mr-1">location_on</i> 16845 Hicks Road</small>
+
+
+                                </div>
+                                <div class="avatar-group mt-2">
+
+                                    <div class="avatar avatar-xs">
+                                        <img src="assets/images/256_joao-silas-636453-unsplash.jpg" alt="Avatar" class="avatar-img rounded-circle">
+                                    </div>
+
+                                    <div class="avatar avatar-xs">
+                                        <img src="assets/images/256_jeremy-banks-798787-unsplash.jpg" alt="Avatar" class="avatar-img rounded-circle">
+                                    </div>
+
+                                    <div class="avatar avatar-xs">
+                                        <img src="assets/images/256_daniel-gaffey-1060698-unsplash.jpg" alt="Avatar" class="avatar-img rounded-circle">
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <small class="text-dark-gray px-3 py-1">
+                    <strong>Wednesday, 27 Feb</strong>
+                </small>
+
+                <div class="list-group list-group-flush">
+
+                    <div class="list-group-item bg-light">
+                        <div class="row">
+                            <div class="col-auto d-flex flex-column">
+                                <small>07:48 PM</small>
+                                <small class="text-dark-gray">30 min</small>
+                            </div>
+                            <div class="col">
+                                <div class="d-flex flex-column flex">
+                                    <a href="#" class="text-body"><strong class="text-15pt">Call Alex</strong></a>
+
+
+                                    <small class="text-muted d-flex align-items-center"><i class="material-icons icon-16pt mr-1">phone</i> 202-555-0131</small>
+
+                                </div>
+
+
+
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <small class="text-dark-gray px-3 py-1">
+                    <strong>Tuesday, 26 Feb</strong>
+                </small>
+
+                <div class="list-group list-group-flush">
+
+                    <div class="list-group-item bg-light">
+                        <div class="row">
+                            <div class="col-auto d-flex flex-column">
+                                <small>03:13 PM</small>
+                                <small class="text-dark-gray">2 hrs</small>
+                            </div>
+                            <div class="col">
+                                <div class="d-flex flex-column flex">
+                                    <a href="#" class="text-body"><strong class="text-15pt">Design Team Meeting</strong></a>
+
+                                    <small class="text-muted d-flex align-items-center"><i class="material-icons icon-16pt mr-1">location_on</i> 16845 Hicks Road</small>
+
+
+                                </div>
+                                <div class="avatar-group mt-2">
+
+                                    <div class="avatar avatar-xs">
+                                        <img src="assets/images/256_rsz_1andy-lee-642320-unsplash.jpg" alt="Avatar" class="avatar-img rounded-circle">
+                                    </div>
+
+                                    <div class="avatar avatar-xs">
+                                        <img src="assets/images/256_michael-dam-258165-unsplash.jpg" alt="Avatar" class="avatar-img rounded-circle">
+                                    </div>
+
+                                    <div class="avatar avatar-xs">
+                                        <img src="assets/images/256_luke-porter-261779-unsplash.jpg" alt="Avatar" class="avatar-img rounded-circle">
+                                    </div>
+
+                                    <div class="avatar avatar-xs">
+                                        <img src="assets/images/stories/256_rsz_clem-onojeghuo-193397-unsplash.jpg" alt="Avatar" class="avatar-img rounded-circle">
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <small class="text-dark-gray px-3 py-1">
+                    <strong>Monday, 25 Feb</strong>
+                </small>
+
+                <div class="list-group list-group-flush">
+
+                    <div class="list-group-item bg-light">
+                        <div class="row">
+                            <div class="col-auto d-flex flex-column">
+                                <small>12:30 PM</small>
+                                <small class="text-dark-gray">2 hrs</small>
+                            </div>
+                            <div class="col d-flex">
+                                <div class="d-flex flex-column flex">
+                                    <a href="#" class="text-body"><strong class="text-15pt">Call Wendy</strong></a>
+
+
+                                    <small class="text-muted d-flex align-items-center"><i class="material-icons icon-16pt mr-1">phone</i> 202-555-0131</small>
+
+                                </div>
+
+
+                                <div class="avatar avatar-xs">
+                                    <img src="assets/images/256_michael-dam-258165-unsplash.jpg" alt="Avatar" class="avatar-img rounded-circle">
+                                </div>
+
+
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- App Settings FAB -->
+    <div id="app-settings">
+        <app-settings layout-active="fixed" :layout-location="{
+      'default': 'student-courses.html',
+      'fixed': 'fixed-student-courses.html',
+      'fluid': 'fluid-student-courses.html',
+      'mini': 'mini-student-courses.html'
+    }"></app-settings>
+    </div>
+
+    <!-- jQuery -->
+    <script src="{% static 'dbcss/vendor/jquery.min.js'%}"></script>
+
+    <!-- Bootstrap -->
+    <script src="{% static 'dbcss/vendor/popper.min.js'%}"></script>
+    <script src="{% static 'dbcss/vendor/bootstrap.min.js'%}"></script>
+
+    <!-- Perfect Scrollbar -->
+    <script src="{% static 'dbcss/vendor/perfect-scrollbar.min.js'%}"></script>
+
+    <!-- DOM Factory -->
+    <script src="{% static 'dbcss/vendor/dom-factory.js'%}"></script>
+
+    <!-- MDK -->
+    <script src="{% static 'dbcss/vendor/material-design-kit.js'%}"></script>
+
+    <!-- Range Slider
+    <script src="{% static 'dbcss/vendor/ion.rangeSlider.min.js'%}"></script>
+    <script src="{% static 'dbcss/js/ion-rangeslider.js'%}"></script>
+    -->
+    <!-- App -->
+    <script src="{% static 'dbcss/js/toggle-check-all.js'%}"></script>
+    <script src="{% static 'dbcss/js/check-selected-row.js'%}"></script>
+    <script src="{% static 'dbcss/js/dropdown.js'%}"></script>
+    <script src="{% static 'dbcss/js/sidebar-mini.js'%}"></script>
+    <script src="{% static 'dbcss/js/app.js'%}"></script>
+
+    <!-- App Settings (safe to remove) -->
+    <script src="{% static 'dbcss/js/app-settings.js'%}"></script>
+
+
+
+
+</body>
+
+</html>

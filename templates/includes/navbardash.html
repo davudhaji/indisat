@@ -1,0 +1,83 @@
+<div class="preloader"></div>
+
+    <!-- Header Layout -->
+    <div class="mdk-header-layout js-mdk-header-layout">
+
+        <!-- Header -->
+
+        <div id="header" class="mdk-header bg-dark js-mdk-header m-0" data-fixed data-effects="waterfall" style="z-index:10;">
+            <div class="mdk-header__content">
+
+                <div class="navbar navbar-expand-sm navbar-main navbar-dark bg-primary pl-md-0 pr-0" id="navbar" data-primary>
+                    <div class="container page__container pr-0">
+
+                        <!-- Navbar toggler -->
+                        <button class="navbar-toggler navbar-toggler-custom  d-flex mr-navbar" type="button" data-toggle="sidebar">
+                            <span class="material-icons icon-14pt">menu</span>
+                        </button>
+
+
+                        <a href="/" class="text-underline-0 navbar-brand">
+                            <span class="mr-3">
+                                <!-- LOGO -->
+                                <img src="/static/upload/alverdash.png" alt="">
+
+                            </span>
+                        </a>
+
+
+
+                        <div class="navbar-collapse collapse" id="navbarsExample03">
+                            <ul class="nav navbar-nav">
+                                <li class="nav-item dropdown">
+                                    <a href="/" class="nav-link">IndiSat.az</a>
+
+                                </li>
+                                <!-- <li class="nav-item ">
+    <a class="nav-link" href="fixed-ui-forms.html">Forms</a>
+  </li>
+  <li class="nav-item ">
+    <a class="nav-link" href="fixed-ui-charts.html">Charts</a>
+  </li> -->
+
+
+                            </ul>
+                        </div>
+
+
+
+
+
+
+
+                        <div class="dropdown">
+                            <a href="#" data-toggle="dropdown" data-caret="false" class="dropdown-toggle navbar-toggler navbar-toggler-dashboard border-left d-flex align-items-center ml-navbar">
+                                <span class="material-icons">laptop</span> İdarə Paneli
+                            </a>
+                            <div id="company_menu" class="dropdown-menu dropdown-menu-right navbar-company-menu">
+                                <div class="dropdown-item d-flex align-items-center py-2 navbar-company-info py-3">
+
+                                    <span class="mr-3">
+                                        <span class="material-icons mr-2">account_circle</span>                                    </span>
+                                    </span>
+                                    <span class="flex d-flex flex-column">
+                                        <strong class="h5 m-0">{{request.user.username}}</strong>
+                                    </span>
+
+                                </div>
+                                <div class="dropdown-divider"></div>
+
+                                <a class="dropdown-item d-flex align-items-center py-2" href="{% url 'user:settings' %}">
+                                   <span class="material-icons mr-2">settings</span> Settings
+                                </a>
+                                <a class="dropdown-item d-flex align-items-center py-2" href="{% url 'user:logout' %}">
+                                    <span class="material-icons mr-2">exit_to_app</span> Logout
+                                </a>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>

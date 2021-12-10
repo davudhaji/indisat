@@ -1,0 +1,255 @@
+{% extends 'layoutdash.html' %}
+{% load static %}
+
+{% block body %}
+<br><br><br><br><br><br><br><br><br><br>
+<div class="container">
+
+<div class="row">
+
+                    <div class="col-md-12">
+                        <div class="card" style="z-index:0;">
+                            <div class="card-body">
+
+
+    {% if packet == 'vip' %}
+
+                                    <div class="d-flex flex-column flex-sm-row">
+                                    <a href="#" class="avatar mb-3 w-xs-plus-down-100 mr-sm-3">
+                                        <img src="{% static 'images/vip.png'%}" alt="Card image cap" class="avatar-course-img">
+                                    </a>
+                                    <div class="flex" style="min-width: 200px;">
+                                        <div class="d-flex">
+                                            <div>
+                                                <h4 class="card-title mb-1"><a href="#">VIP</a></h4>
+                                                <p class="text-muted">3 Gün Ərzinde VIP Elan yerləşdirə bilərsiniz və yerləsdirdiyiniz elanlar VIP bölməsinə düşərək öz katiqoriyasına uyğun yerlərdə üstdə görsənəcək  </p>
+                                            </div>
+
+                                        </div>
+                                        <div class="d-flex align-items-end">
+                                            <div class="d-flex flex flex-column mr-3">
+                                                <div class="d-flex align-items-center py-2 border-bottom">
+                                                    <span class="mr-2">$4</span>
+                                                    <small class="text-muted ml-auto">Başlanğıc səviyə elanlar</small>
+                                                </div>
+                                                <div class="d-flex align-items-center py-2">
+                                                    <span class="badge badge-vuejs mr-2">VIP</span>
+                                                    <span class="badge badge-soft-secondary">500 + Baxış</span>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                        <div id="paypal-button-container" style="z-index:-1;"></div>
+
+    <!-- Include the PayPal JavaScript SDK -->
+    <script src="https://www.paypal.com/sdk/js?client-id=AeQNhFD9xU-oKQbun8Y7M2sLIxor7apf8ipusZCeDXy75LWTwadgTM1v7YvrFul1HkuTAPPOqMxDTQdm&currency=USD"></script>
+
+    <script>
+
+
+
+
+        // Render the PayPal button into #paypal-button-container
+        paypal.Buttons({
+
+            // Set up the transaction
+            createOrder: function(data, actions) {
+                return actions.order.create({
+                    purchase_units: [{
+                        amount: {
+                            value: '4'
+                        }
+                    }]
+                });
+            },
+
+            // Finalize the transaction
+            onApprove: function(data, actions) {
+                return actions.order.capture().then(function(details) {
+                    // Show a success message to the buyer
+                    alert('Transaction completed by ' + details.payer.name.given_name + '!');
+
+                });
+            }
+
+
+        }).render('#paypal-button-container');
+
+
+    </script>
+                            </div>
+                        </div>
+                    </div>
+</div></div>
+
+    {% elif packet == 'diamond' %}
+        <div class="d-flex flex-column flex-sm-row">
+                                    <a href="#" class="avatar mb-3 w-xs-plus-down-100 mr-sm-3">
+                                        <img src="{% static 'images/diamond.png' %}" alt="Card image cap" class="avatar-course-img">
+                                    </a>
+                                    <div class="flex" style="min-width: 200px;">
+                                        <div class="d-flex">
+                                            <div>
+                                                <h4 class="card-title mb-1"><a href="#">DIAMOND</a></h4>
+                                                <p class="text-muted">DIAMOND Paketində siz 6 gün elan yerləşdirə bilərsiniz. Bu paketdəki elanların fərqi ondadırki sizin yerləşdirdiyiniz elanlar hansı katiqoriyaya aiddirsə onun baş katiqoriyasında cıxır məsəlçün: Telefon yerləsdirmizinizsə telefon bölməsində və hemçin elektronik əşyalar bölməsində üstdə DIAMOND elanlar icərisində çıxır</p>
+                                            </div>
+
+                                        </div>
+                                        <div class="d-flex align-items-end">
+                                            <div class="d-flex flex flex-column mr-3">
+                                                <div class="d-flex align-items-center py-2 border-bottom">
+                                                    <span class="mr-2">$6</span>
+                                                    <small class="text-muted ml-auto">Orta Seviye Elanlar</small>
+                                                </div>
+                                                <div class="d-flex align-items-center py-2">
+                                                    <span class="badge badge-gitlab mr-2">DIAMOND</span>
+                                                    <span class="badge badge-soft-secondary">1200+ Baxış</span>
+                                                </div>
+
+                                            </div>
+
+                                        </div>
+                                        <div id="paypal-button-container" style="z-index:-1;"></div>
+
+    <!-- Include the PayPal JavaScript SDK -->
+    <script src="https://www.paypal.com/sdk/js?client-id=AeQNhFD9xU-oKQbun8Y7M2sLIxor7apf8ipusZCeDXy75LWTwadgTM1v7YvrFul1HkuTAPPOqMxDTQdm&currency=USD"></script>
+
+    <script>
+        // Render the PayPal button into #paypal-button-container
+        paypal.Buttons({
+
+            // Set up the transaction
+            createOrder: function(data, actions) {
+                return actions.order.create({
+                    purchase_units: [{
+                        amount: {
+                            value: '6'
+                        }
+                    }]
+                });
+            },
+
+            // Finalize the transaction
+            onApprove: function(data, actions) {
+                return actions.order.capture().then(function(details) {
+                    // Show a success message to the buyer
+                    alert('Transaction completed by ' + details.payer.name.given_name + '!');
+                });
+            }
+
+
+        }).render('#paypal-button-container');
+    </script>
+                            </div>
+                        </div>
+                    </div>
+</div></div>
+
+    {% else %}
+  <div class="d-flex flex-column flex-sm-row">
+                                    <a href="#" class="avatar mb-3 w-xs-plus-down-100 mr-sm-3">
+                                        <img src="{% static 'images/premium.png' %}" alt="Card image cap" class="avatar-course-img">
+                                    </a>
+                                    <div class="flex" style="min-width: 200px;">
+                                        <div class="d-flex">
+                                            <div>
+                                                <h4 class="card-title mb-1"><a href="#">PREMIUM</a></h4>
+                                                <p class="text-muted">PREMIUM Paketində siz 1 həftə Premium elan yerləsdiriləcək.Bu elan Saytin Ana səyfəsində ve bütün katiqoriyalarda üstdə görsənəcəkdir.</p>
+                                            </div>
+
+                                        </div>
+                                        <div class="d-flex align-items-end">
+                                            <div class="d-flex flex flex-column mr-3">
+                                                <div class="d-flex align-items-center py-2 border-bottom">
+                                                    <span class="mr-2">4 AZN</span>
+                                                    <small class="text-muted ml-auto">Üst səviyə elanlar</small>
+                                                </div>
+                                                <div class="d-flex align-items-center py-2">
+                                                    <span class="badge badge-angular mr-2">PREMIUM</span>
+                                                    <span class="badge badge-soft-secondary">2000+ Baxış</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div id="paypal-button-container" style="z-index:-1;"></div>
+
+    <!-- Include the PayPal JavaScript SDK -->
+    <script src="https://www.paypal.com/sdk/js?client-id=Aauvk2VjKVuAzInQkugp5x933V5DPW0Gxv4bKG6ny1keX5UN8-rUZqGAIJTC8h0YMKPwqZm9Tg5vJ20a&currency=USD"></script>
+
+    <script>
+        function getCookie(name) {
+            let cookieValue = null;
+            if (document.cookie && document.cookie !== '') {
+                const cookies = document.cookie.split(';');
+                for (let i = 0; i < cookies.length; i++) {
+                    const cookie = cookies[i].trim();
+                    // Does this cookie string begin with the name we want?
+                    if (cookie.substring(0, name.length + 1) === (name + '=')) {
+                        cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+                        break;
+                    }
+                }
+            }
+            return cookieValue;
+        }
+        const csrftoken = getCookie('csrftoken');
+
+        var product = "{{id}}"
+        var types = "{{type}}"
+
+
+        function completeOrder(){
+            var url = "{% url 'complete' %}"
+
+            fetch(url,{
+                method:"POST",
+                headers:{
+                    'Content-type':'application/json',
+                    'X-CSRFToken':csrftoken,
+                },
+                body:JSON.stringify({"prodcutId":product,"type":types})
+
+            })
+        }
+
+
+        // Render the PayPal button into #paypal-button-container
+        paypal.Buttons({
+
+            // Set up the transaction
+            createOrder: function(data, actions) {
+                return actions.order.create({
+                    purchase_units: [{
+                        amount: {
+                            value: '2'
+                        }
+                    }]
+                });
+            },
+
+            // Finalize the transaction
+            onApprove: function(data, actions) {
+                return actions.order.capture().then(function(details) {
+                    // Show a success message to the buyer
+                    completeOrder()
+                    alert('Uğurla Ödəniş Edildi. Ana Səyfəyə dönərək elanınızı görə bilərsiniz ' + details.payer.name.given_name + '!');
+
+                });
+            }
+
+
+        }).render('#paypal-button-container');
+    </script>
+                            </div>
+                        </div>
+                    </div>
+</div></div>
+
+{% endif %}
+
+
+
+
+
+
+
+{% endblock body %}

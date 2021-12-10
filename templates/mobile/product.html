@@ -1,0 +1,37 @@
+{% extends 'mobile/layout.html' %}
+{% load static %}
+
+
+{% block body %}
+	<!-- product -->
+	<div class="product segments-page">
+		<div class="container">
+			<div class="row">
+				<div class="col s6">
+					<select class="browser-default">
+					    <option value="1">Newest Items</option>
+					    <option value="2">Best Seller</option>
+					    <option value="3">Popular</option>
+					    <option value="3">Price: High to Low</option>
+					    <option value="3">Price: Low to High</option>
+				 	</select>
+				</div>
+				<div class="col s6">
+					<select class="browser-default">
+					    <option value="1">Added: Any Date</option>
+					    <option value="1">in the last Year</option>
+					    <option value="1">in the last Month</option>
+					    <option value="1">in the last Week</option>
+					    <option value="1">in the last Day</option>
+				 	</select>
+				</div>
+			</div>
+
+			
+			
+		</div>
+	</div>
+ 
+	<!-- end product -->
+    {% include "mobile/che.html" %}
+{% endblock body %}

@@ -1,0 +1,79 @@
+{% load static %}
+<div class="b-seller segments">
+
+              
+        <div class="container" style="position: relative;">
+            <div class="section-title">
+                <h3>Premium Elanlar</h3>
+            </div>
+            <!-- preloader -->
+                <div class="preloader">
+                    <div class="spinner"></div>
+                </div>
+            <!-- end preloader -->
+            {% for article in pre %}
+            <div class="row">
+                {% for art in article %}
+                <a {% if art.user %} href="/article/product-details/elan/{{art.id}}" {% else %}href="/article/product-details/sticker/{{art.id}}"{% endif %}>
+                <div class="col s6">
+                    <div class="content" >
+                        <div class="image">
+                            <img src="{{ art.image.url }}" style="max-width:100%;min-width:100%;max-height:105px;min-height:105px;" alt="{{ art.title }}">
+                        </div>
+                        <div class="text">
+                            <p>{{art.title |truncatechars:20 }}</p>
+                          
+                            <h5>⋔{{art.qiymet}}</h5>
+                        </div>
+                    </div>
+                </div>
+                </a>
+                {% endfor %}
+            </div>
+            {% endfor %}
+            
+        </div>
+        <br><br>
+        <div class="container">
+            <div class="section-title">
+                <h3>Son qoyulan Elanlar</h3>
+            </div>
+            {% for article in son %}
+            <div class="row">
+                {% for art in article %}
+                <a {% if art.user %} href="/article/product-details/elan/{{art.id}}" {% else %}href="/article/product-details/sticker/{{art.id}}"{% endif %}>
+
+                <div class="col s6">
+                    <div class="content">
+                        <div class="image">
+                            <img src="{{ art.image.url }}" alt="{{ art.title }}" style="max-width:100%;min-width:100%;max-height:105px;min-height:105px;">
+                        </div>
+                        <div class="text">
+                            <a {% if art.user %} href="/article/product-details/elan/{{art.id}}" {% else %}href="/article/product-details/sticker/{{art.id}}"{% endif %}>
+                                <p>{{art.title |truncatechars:20 }}</p>
+                            </a>
+                            <h5>⋔{{art.qiymet}}</h5>
+                        </div>
+                    </div>
+                </div>
+                </a>
+                {% endfor %}
+            </div>
+            {% endfor %}
+            
+        </div>
+        
+            <div class="container">
+                <div class="pagination container">
+                            <form method="get">   
+								<ul>
+                                    <li></li><li></li>
+									<li class="disabled"><button class="button" style="height:30px;width:100px;" name="page" value="{{number}} azalt">Əvvəlki</button></li>
+									<li class="disabled"><button class="button" style="height:30px;width:100px;" name="page" value="{{number}} artir">Sonrakı</button></li>
+								</ul>
+                             </form> 
+				</div>  
+                </div>     
+            
+    </div>
+    

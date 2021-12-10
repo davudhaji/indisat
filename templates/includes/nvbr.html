@@ -1,0 +1,324 @@
+{% load static %}
+<div class="btx-wrapper btx-p-bg-bg btx-home hide-border">
+
+        <header class="btx-header" data-transparent="" data-height="90">
+
+            <nav class="btx-navbar btx-navbar--standard btx-light-scheme btx-highlight-default btx-navbar-dropdown-dark-scheme btx-navbar--center btx-navbar--custom" data-height="90" data-style="standard" data-fixed="true" data-height_fixed="60" data-autohide="true" data-transition="custom-change" data-transition_point="1">
+                <div class="btx-container--fullwidth">
+                    <div class="btx-navbar-content-wrapper">
+                        <div class="btx-navbar-header">
+                            <a class="btx-navbar-brand" href="/">
+
+                                <img src="{% static 'upload/indisat.png' %}" alt="">
+
+                            </a>
+                        </div>
+                        {% if request.user.is_authenticated %}
+                                <div class="btx-button btx-button--fill btx-button-hover--brand btx-button-size--small btx-button-color--brand btx-navbar-widget">
+                                <a class="btnx js-header-link-btn" href="{% url 'user:dashboard' %}">Elanlarım</a>
+
+                                <a class="btnx js-header-link-btn" href="{% url 'user:logout' %}">Cixis Et</a>
+
+                                </div>
+
+                        {%else%}
+                                <div class=" btx-button-hover--brand btx-button-size--small  btx-navbar-widget">
+                                    <a class="btnx btn-outline-light" style="padding:10px;" href="{% url 'user:elan' %}">Elan Yerləşdir +</a>
+                                    <a class="btnx btn-outline-light" style="padding:10px;" href="{% url 'user:login' %}">Daxil Ol</a>
+                                </div>
+
+                        {% endif %}
+
+
+
+                        <ul id="menu-main-menu" class="btx-navbar-nav btx-menu">
+                            <li class="menu-item menu-item-has-children  menu-item-mega-menu"><a href="#">Kateqoriyalar</a>
+                                <div class="btx-mega-menu btx-s-bg-bg">
+                                    <ul>
+                                        <li class="menu-item menu-item-has-children  btx-col-1-5 btx-p-border-border">
+                                            <div class="btx-mega-menu-item menu-item-has-children"><a class="btx-mega-menu-title" href="#">Daşınmaz əmlak</a>
+                                                <ul class="sub-menu btx-s-bg-bg">
+                                                            <li class="menu-item "><a href="/article/category/de/mnz">Mənzillər</a></li>
+                                                            <li class="menu-item "><a href="/article/category/de/ovo">Obyektler Ve Ofisler</a></li>
+                                                            <li class="menu-item "><a href="/article/category/de/trp">Torpaq</a></li>
+                                                            <li class="menu-item "><a href="/article/category/de/ove">Obyektler Ve Ofisler</a></li>
+                                                            <li class="menu-item "><a href="/article/category/de/qrj">Qarajlar</a></li>
+                                                            <li class="menu-item "><a href="/article/category/de/vvb">Villalar, bağ evləri</a></li>
+
+                                                </ul>
+                                            </div>
+                                        </li>
+                                        <li class="menu-item menu-item-has-children  btx-col-1-5 btx-p-border-border">
+                                            <div class="btx-mega-menu-item menu-item-has-children"><a class="btx-mega-menu-title" href="#">Ev və bağ üçün</a>
+                                                <ul class="sub-menu btx-s-bg-bg">
+                                                    <li class="menu-item "><a href="/article/category/evvebag/mvi">Mebel və interyer</a></li>
+                                                    <li class="menu-item "><a href="/article/category/evvebag/tvt">Təmir və tikinti</a></li>
+                                                    <li class="menu-item "><a href="/article/category/evvebag/btk">Bitkilər</a></li>
+                                                    <li class="menu-item "><a href="/article/category/evvebag/mt">Məişət texnikası</a></li>
+                                                    <li class="menu-item "><a href="/article/category/evvebag/qab">Qab-qacaq və mətbəx ləvazimatları</a></li>
+
+                                                </ul>
+                                            </div>
+                                        </li>
+                                        <li class="menu-item menu-item-has-children  btx-col-1-5 btx-p-border-border">
+                                            <div class="btx-mega-menu-item menu-item-has-children"><a class="btx-mega-menu-title" href="#">Elektronika</a>
+                                                <ul class="sub-menu btx-s-bg-bg">
+
+                                                            <li class="menu-item "><a href="/article/category/elektronika/ka">Kompüter aksesuarları</a></li>
+                                                            <li class="menu-item "><a href="/article/category/elektronika/nvn">Noutbuklar və Netbuklar</a></li>
+                                                            <li class="menu-item "><a href="/article/category/elektronika/pc">Masaüstü kompüterlər</a></li>
+                                                            <li class="menu-item "><a href="/article/category/elektronika/nvs">Nömrələr və SİM-kartlar</a></li>
+                                                            <li class="menu-item "><a href="/article/category/elektronika/mnt">Komponentlər və monitorlar</a></li>
+                                                            <li class="menu-item "><a href="/article/category/elektronika/oav">Ofis avadanlığı və istehlak</a></li>
+                                                            <li class="menu-item "><a href="/article/category/elektronika/tlf">Telefonlar</a></li>
+                                                            <li class="menu-item "><a href="/article/category/elektronika/ft">Foto texnika</a></li>
+
+                                                            <li class="menu-item "><a href="/article/category/elektronika/pve">Planşet və elektron kitablar</a></li>
+                                                            <li class="menu-item "><a href="/article/category/elektronika/op">Oyunlar Pultlar ve programlar</a></li>
+                                                </ul>
+                                            </div>
+                                        </li>
+                                        <li class="menu-item menu-item-has-children  btx-col-1-5 btx-p-border-border">
+                                            <div class="btx-mega-menu-item menu-item-has-children"><a class="btx-mega-menu-title" href="#">Neqliyat</a>
+                                                <ul class="sub-menu btx-s-bg-bg">
+                                                            <li class="menu-item "><a href="/article/category/neqliyat/ehv">Ehtiyat hissələri və aksesuarlarr</a></li>
+                                                            <li class="menu-item "><a href="/article/category/neqliyat/afv">Avtobuslar və xüsusi texnika</a></li>
+                                                            <li class="menu-item "><a href="/article/category/neqliyat/avt">Avtomobillər</a></li>
+                                                            <li class="menu-item "><a href="/article/category/neqliyat/aqr">Aqrotexnika</a></li>
+                                                            <li class="menu-item "><a href="/article/category/neqliyat/mvm">Motosikletlər və mopedlər</a></li>
+                                                            <li class="menu-item "><a href="/article/category/neqliyat/sn">Su nəqliyyatı</a></li>
+                                                </ul>
+                                            </div>
+                                        </li>
+                                        <li class="menu-item menu-item-has-children  btx-col-1-5 btx-p-border-border">
+                                            <div class="btx-mega-menu-item menu-item-has-children"><a class="btx-mega-menu-title" href="#">Heyvanlar</a>
+                                                <ul class="sub-menu btx-s-bg-bg">
+                                                            <li class="menu-item "><a href="/article/category/heyvanlar/qsl">Quşlar</a></li>
+                                                            <li class="menu-item "><a href="/article/category/heyvanlar/itl">İtlər</a></li>
+                                                            <li class="menu-item "><a href="/article/category/heyvanlar/huv">Hevanlar ücün Məhsullar</a></li>
+                                                            <li class="menu-item "><a href="/article/category/heyvanlar/dh">Digər heyvanlar</a></li>
+                                                            <li class="menu-item "><a href="/article/category/heyvanlar/psk">Pişiklər</a></li>
+                                                            <li class="menu-item "><a href="/article/category/heyvanlar/avb">Akvarium və balıqlar</a></li>
+
+                                                </ul>
+                                            </div>
+                                        </li>
+                                        <li class="menu-item menu-item-has-children  btx-col-1-5 btx-p-border-border">
+                                            <div class="btx-mega-menu-item menu-item-has-children"><a class="btx-mega-menu-title" href="#">Hobbi</a>
+                                                <ul class="sub-menu btx-s-bg-bg">
+
+                                                            <li class="menu-item "><a href="/article/category/hobbi/vls">Velosipedlər</a></li>
+                                                            <li class="menu-item "><a href="/article/category/hobbi/ma">Musiqi alətləri</a></li>
+                                                            <li class="menu-item "><a href="/article/category/hobbi/iva">İdman və asudə</a></li>
+
+                                                </ul>
+                                            </div>
+                                        </li>
+
+                                     <div class="btx-navbar-search btx-p-bg-bg btx-s-text-color"><span class="btx-close-button fa fa-ln-cross"></span>
+                                            <form class="btx-search-form" role="search" method="get" action="/"><span class="btx-search-form-title fa fa-search"></span>
+                                                <input type="text" placeholder="Axtar" value="" name="s" />
+                                            </form>
+
+                                        </div>
+
+                                    </li>
+
+                                    </ul>
+
+
+                                    <li class="btx-menu-search"><a href="#" class="js-menu-search"><i class="fa fa-search"></i></a>
+                                        <div class="btx-navbar-search btx-p-bg-bg btx-s-text-color"><span class="btx-close-button fa fa-ln-cross"></span>
+                                            <form class="btx-search-form" role="search" method="get" action="/"><span class="btx-search-form-title fa fa-search"></span>
+                                             {% csrf_token %}
+                                                <input type="text" placeholder="Axtar" value="" name="s" />
+                                            </form>
+                                        </div>
+
+                                    </li>
+                                </div>
+
+                            </li>
+
+                        </ul>
+
+                    </div>
+                </div>
+
+            </nav>
+            <div class="btx-header-widgets btx-left-alignment btx-light-scheme">
+                <div class="btx-header-widgets-content">
+                    <div class="btx-container--fullwidth">
+                        <div class="btx-row">
+
+                            <div class="btx-header-widgets-column btx-p-border-border btx-col-3">
+                            </div>
+                            <div class="btx-header-widgets-column btx-p-border-border btx-col-3">
+                            </div>
+                            <div class="btx-header-widgets-column btx-p-border-border btx-col-3">
+                            </div>
+                            <div class="btx-header-widgets-column btx-p-border-border btx-col-3">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <nav class="btx-navbar--mobile btx-navbar--mobile-standard btx-navbar--minimal btx-navbar--minimal--full btx-light-scheme" data-height="60" data-fixed="true" data-autohide="true" data-transition="custom-change" data-transition_point="1">
+                <div class="btx-container--fullwidth">
+                    <div class="btx-navbar-content-wrapper">
+                        <div class="btx-navbar-header">
+                            <a class="btx-navbar-brand" href="/">
+
+                                <img src="{% static 'upload/indisat.png' %}" alt="">
+
+                            </a>
+
+                        </div>
+
+                        <a class="btx-collapsed-button" href="#" data-target=".btx-collapsed-menu">
+                            <span class="btx-lines"></span>
+                        </a>
+
+                        <div class="btx-collapsed-menu btx-collapsed-menu--full">
+                            <div class="btx-navbar-background">
+                                <div class="btx-background-wrapper"></div>
+                                <div class="btx-background-overlay btx-p-bg-bg"></div>
+                            </div>
+
+                            <div class="btx-collapsed-menu-inner">
+                                <ul id="menu-main-menu-1" class="btx-navbar-nav btx-menu">
+                                    <li class="menu-item menu-item-has-children  menu-item-mega-menu"><a href="index.html">Katigoriyalar</a>
+                                        <div class="btx-mega-menu btx-s-bg-bg">
+                                            <ul>
+                                                <li class="menu-item menu-item-has-children  btx-col-1-5 btx-p-border-border">
+                                                    <div class="btx-mega-menu-item menu-item-has-children"><a class="btx-mega-menu-title" href="#">Daşınmaz əmlak</a>
+                                                        <ul class="sub-menu btx-s-bg-bg">
+                                                            <li class="menu-item "><a href="/article/category/de/mnz">Mənzillər</a></li>
+                                                            <li class="menu-item "><a href="/article/category/de/ovo">Obyektler Ve Ofisler</a></li>
+                                                            <li class="menu-item "><a href="/article/category/de/trp">Torpaq</a></li>
+                                                            <li class="menu-item "><a href="/article/category/de/ove">Obyektler Ve Ofisler</a></li>
+                                                            <li class="menu-item "><a href="/article/category/de/qrj">Qarajlar</a></li>
+                                                            <li class="menu-item "><a href="/article/category/de/vvb">Villalar, bağ evləri</a></li>
+
+                                                        </ul>
+                                                    </div>
+                                                </li>
+                                                <li class="menu-item menu-item-has-children  btx-col-1-5 btx-p-border-border">
+                                                    <div class="btx-mega-menu-item menu-item-has-children"><a class="btx-mega-menu-title" href="#">Ev və bağ üçün</a>
+                                                        <ul class="sub-menu btx-s-bg-bg">
+                                                                <li class="menu-item "><a href="/article/category/evvebag/mvi">Mebel və interyer</a></li>
+                                                                <li class="menu-item "><a href="/article/category/evvebag/tvt">Təmir və tikinti</a></li>
+                                                                <li class="menu-item "><a href="/article/category/evvebag/btk">Bitkilər</a></li>
+                                                                <li class="menu-item "><a href="/article/category/evvebag/mt">Məişət texnikası</a></li>
+                                                                <li class="menu-item "><a href="/article/category/evvebag/qab">Qab-qacaq və mətbəx ləvazimatları</a></li>
+                                                        </ul>
+                                                    </div>
+                                                </li>
+                                                <li class="menu-item menu-item-has-children  btx-col-1-5 btx-p-border-border">
+                                                    <div class="btx-mega-menu-item menu-item-has-children">
+                                                    <a class="btx-mega-menu-title" href="#">Elektronika</a>
+                                                        <ul class="sub-menu btx-s-bg-bg">
+                                                            <li class="menu-item "><a href="/article/category/elektronika/ka">Kompüter aksesuarları</a></li>
+                                                            <li class="menu-item "><a href="/article/category/elektronika/nvn">Noutbuklar və Netbuklar</a></li>
+                                                            <li class="menu-item "><a href="/article/category/elektronika/pc">Masaüstü kompüterlər</a></li>
+                                                            <li class="menu-item "><a href="/article/category/elektronika/nvs">Nömrələr və SİM-kartlar</a></li>
+                                                            <li class="menu-item "><a href="/article/category/elektronika/mnt">Komponentlər və monitorlar</a></li>
+                                                            <li class="menu-item "><a href="/article/category/elektronika/oav">Ofis avadanlığı və istehlak</a></li>
+                                                            <li class="menu-item "><a href="/article/category/elektronika/tlf">Telefonlar</a></li>
+                                                            <li class="menu-item "><a href="/article/category/elektronika/ft">Foto texnika</a></li>
+
+                                                            <li class="menu-item "><a href="/article/category/elektronika/pve">Planşet və elektron kitablar</a></li>
+                                                            <li class="menu-item "><a href="/article/category/elektronika/op">Oyunlar Pultlar ve programlar</a></li>
+                                                        </ul>
+                                                    </div>
+                                                </li>
+                                                <li class="menu-item menu-item-has-children  btx-col-1-5 btx-p-border-border">
+                                                    <div class="btx-mega-menu-item menu-item-has-children"><a class="btx-mega-menu-title" href="#">Hobbi</a>
+                                                        <ul class="sub-menu btx-s-bg-bg">
+                                                            <li class="menu-item "><a href="/article/category/hobbi/vls">Velosipedlər</a></li>
+                                                            <li class="menu-item "><a href="/article/category/hobbi/ma">Musiqi alətləri</a></li>
+                                                            <li class="menu-item "><a href="/article/category/hobbi/iva">İdman və asudə</a></li>
+                                                            </ul>
+                                                    </div>
+                                                </li>
+                                                <li class="menu-item menu-item-has-children  btx-col-1-5 btx-p-border-border">
+                                                    <div class="btx-mega-menu-item menu-item-has-children"><a class="btx-mega-menu-title" href="#">Neqliyat</a>
+                                                        <ul class="sub-menu btx-s-bg-bg">
+                                                            <li class="menu-item "><a href="/article/category/neqliyat/ehv">Ehtiyat hissələri və aksesuarlarr</a></li>
+                                                            <li class="menu-item "><a href="/article/category/neqliyat/afv">Avtobuslar və xüsusi texnika</a></li>
+                                                            <li class="menu-item "><a href="/article/category/neqliyat/avt">Avtomobillər</a></li>
+                                                            <li class="menu-item "><a href="/article/category/neqliyat/aqr">Aqrotexnika</a></li>
+                                                            <li class="menu-item "><a href="/article/category/neqliyat/mvm">Motosikletlər və mopedlər</a></li>
+                                                            <li class="menu-item "><a href="/article/category/neqliyat/sn">Su nəqliyyatı</a></li>
+                                                        </ul>
+                                                    </div>
+                                                </li>
+                                                <li class="menu-item menu-item-has-children  btx-col-1-5 btx-p-border-border">
+                                                    <div class="btx-mega-menu-item menu-item-has-children"><a class="btx-mega-menu-title" href="#">Heyvanlar</a>
+                                                        <ul class="sub-menu btx-s-bg-bg">
+                                                            <li class="menu-item "><a href="/article/category/heyvanlar/qsl">Quşlar</a></li>
+                                                            <li class="menu-item "><a href="/article/category/heyvanlar/itl">İtlər</a></li>
+                                                            <li class="menu-item "><a href="/article/category/heyvanlar/huv">Hevanlar ücün Məhsullar</a></li>
+                                                            <li class="menu-item "><a href="/article/category/heyvanlar/dh">Digər heyvanlar</a></li>
+                                                            <li class="menu-item "><a href="/article/category/heyvanlar/psk">Pişiklər</a></li>
+                                                            <li class="menu-item "><a href="/article/category/heyvanlar/avb">Akvarium və balıqlar</a></li>
+                                                        </ul>
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </li>
+
+                                    {% if request.user.is_authenticated %}
+                                    <li class="menu-item menu-item-has-children  menu-item-mega-menu"><a href="{% url 'user:logout' %}">Cixis Et</a>
+                                    <li class="menu-item menu-item-has-children  menu-item-mega-menu"><a href="{% url 'user:dashboard' %}">Elanlarım</a>
+                                    {%else%}
+                                    <li class="menu-item menu-item-has-children  menu-item-mega-menu"><a href="{% url 'user:login' %}">Daxil Ol</a>
+                                    <li class="menu-item menu-item-has-children  menu-item-mega-menu"><a href="{% url 'user:elan' %}">Elan Yeləşdir +</a>
+                                    <li class="menu-item menu-item-has-children  menu-item-mega-menu"><a href="{% url 'user:register' %}">Qeydiyatdan Kec</a>
+
+                                    {% endif %}
+
+
+
+                                    <li class="btx-menu-search"><a href="#" class="js-menu-search"><i class="fa fa-search"></i></a>
+                                        <div class="btx-navbar-search btx-p-bg-bg btx-s-text-color"><span class="btx-close-button fa fa-ln-cross"></span>
+                                            <form class="btx-search-form" role="search" method="get" action="/"><span class="btx-search-form-title fa fa-search"></span>
+                                                <input type="text" placeholder="Axtar" value="" name="s" />
+                                            </form>
+                                        </div>
+
+                                    </li>
+
+
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+
+        </header>
+
+        {% if messages %}
+            <br><br><br><br>
+            <div class="container">
+            {% for message in messages %}
+
+
+            {%if message.tags == "warning"  %}
+                <div class="alert alert-danger">{{ message }}</div>
+
+
+            {% else %}
+                <div class="alert alert-{{message.tags}}">{{ message }}</div>
+
+
+            {% endif %}
+            </div>
+
+
+            {% endfor %}
+
+        {% endif %}

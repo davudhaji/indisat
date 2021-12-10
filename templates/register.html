@@ -1,0 +1,24 @@
+{% extends 'layout.html' %}
+{% load static %}
+
+
+{% block body %}
+<style>
+ .mine{
+     padding-left:60px;
+     padding-right:60px;
+ }
+</style>
+<br><br>
+<hr><br>
+    <div class="container mine">
+    <form method="post">
+    {% csrf_token %}
+    {{form.as_p}}
+
+    <br>
+    <button type="submit" class="btn btn-danger">Qeydiyatdan Kec</button>
+    </form>
+    </div>
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+{% endblock body %}

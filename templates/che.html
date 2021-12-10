@@ -1,0 +1,252 @@
+
+<script data-ad-client="ca-pub-7345022536788178" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+{% if preyox or sonyox %}
+    <div class="btx-wrapper btx-p-bg-bg btx-home hide-border">
+
+
+
+    {% if preyox %}
+        <main class="btx-content btx-content--with-header" id="main">
+            <article id="post-1291" class="btx-content-wrapper post-1291 page type-page status-publish hentry">
+            <header class="btx-content-header btx-page-title btx-page-title--inline btx-left-align js-dynamic-navbar btx-page-title--left" data-role="header">
+                    <div class="btx-background" data-type="color" data-parallaxspeed="0" data-contentfade="" data-mobileparallax="">
+                        <div class="btx-background-overlay btx-s-bg-bg" style="opacity:1;"></div>
+                    </div>
+
+                    <div class="btx-container">
+                        <div class="btx-page-title-wrapper">
+
+                            <div class="btx-page-title-breadcrumbs custom-color" style="color:#303030;">
+
+                                <ul class="btx-breadcrumbs">
+                                    <li>
+                                        <a href="index.html">Home</a>
+                                    </li>
+                                    <li class="btx-separator"><span class="fa fa-angle-right"></span></li>
+
+                                    <li>
+                                        <a href="#">Shop</a>
+                                    </li>
+                                    <li class="btx-separator"><span class="fa fa-angle-right"></span></li>
+
+                                    <li class="btx-breadcrumbs-current btx-s-text-color">Elanlar</li>
+                                </ul>
+                            </div>
+
+
+                            <div class="btx-page-title-content btx-s-text-color" style="color:#303030;">
+
+                                <blockquote class="blockquote">
+                                    <p class="mb-0">Premium Elanlar:</p>
+                                    <footer class="blockquote-footer">PREMIUM</footer>
+                                </blockquote>
+                            </div>
+                        </div>
+                    </div>
+
+            </header>
+
+
+            {% for article in pre %}
+                <div class="btx-main btx-main--single">
+                    <div class="btx-main-wrapper">
+                        <section class="btx-section js-dynamic-navbar btx-p-border-border" data-index="0">
+                            <div class="btx-background" data-type="image" data-parallaxspeed="2" data-contentfade="" data-mobileparallax="">
+                                <div class="btx-background-overlay btx-p-bg-bg" style="background-color:#f5f5f5; opacity:1;"></div>
+                            </div>
+                            <div class="btx-section-wrapper" style="padding-top:0px; padding-bottom:80px;">
+                                <div class="btx-container">
+                                    <div class="btx-row btx-row--main">
+                                        <div class="btx-col-12">
+
+                                            <div class="btx-item js-item-product btx-product btx-product--standard btx-left-align btx-product-layout--carousel woocommerce btx-product-no-rating">
+                                                <!-- 1 Palasa Divlerler icinde 3 dene elan . Forun birini burda aciriq birinide aldaki divde-->
+
+                                                <div class="btx-product-content" style="margin:0 -10px;  padding:0px;" data-display="4" data-scroll="1" data-loop="true">
+                                                    {% for art in article %}
+
+
+                                                    <article class="btx-entry  btx-col-3 post-1516 product type-product status-publish has-post-thumbnail product_cat-top product_tag-t-shirt first outofstock featured shipping-taxable purchasable " style="padding:0 10px;" data-filter="Top">
+                                                        <div class="btx-entry-inner card btx-product-entry-content btx-with-background" style="background-color:rgba(255,255,255,1);">
+                                                            <div class="btx-product-entry-media btx-product-entry-media--still">
+                                                                <a class="btx-product-entry-image" {% if art.user %} href="/user/elan/{{art.id}}" {% else %}href="/sticker/{{art.id}}"{% endif %}>
+                                                                    <span class="onsale">PREMIUM</span>
+                                                                    <img width="624" height="800" src="{{art.image.url}}" class="attachment-shop_catalog size-shop_catalog wp-post-image" style="max-height:220px; min-height:220px; max-width:390px; min-width:280; object-fit:cover" alt="{{ art.title }}" title="{{ art.title }}" />
+                                                                </a>
+
+                                                            </div>
+
+                                                            <div class="p-3">
+                                                                <div class="mb-2">
+
+
+                                                                    <strong class="text-muted"><b>{{art.title |truncatechars:25}}</b></strong>
+                                                                </div>
+                                                                <div class="d-flex align-items-center">
+                                                                    <strong class="h4 m-0">⋔{{art.qiymet}}</strong>
+                                                                    <!-- Bura Button veya bawqi yazi qoya bilersen burda bax adinda button varidi -->
+
+                                                                </div>
+
+                                                            </div>
+                                                            <div class="container">
+                                                                        <small><b>{{art.created_date}}</b></small>
+                                                            </div>
+
+                                                        </div>
+                                                    </article>
+                                                    {% endfor %}
+
+
+
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+                    </div>
+                </div>
+                {% endfor %}
+                {% else %}
+
+            {% endif %}
+            {% if sonyox %}
+
+
+
+</div>
+      <header class="btx-content-header btx-page-title btx-page-title--inline btx-left-align js-dynamic-navbar btx-page-title--left" data-role="header">
+                    <div class="btx-background" data-type="color" data-parallaxspeed="0" data-contentfade="" data-mobileparallax="">
+                        <div class="btx-background-overlay btx-s-bg-bg" style="opacity:1;"></div>
+                    </div>
+
+                    <div class="btx-container">
+                        <div class="btx-page-title-wrapper">
+
+
+
+
+                            <div class="btx-page-title-content btx-s-text-color" style="color:#303030;">
+                            <blockquote class="blockquote">
+                                <p class="mb-0">Son Qoyulan Elanlar:</p>
+                            </blockquote>
+
+                            </div>
+                        </div>
+                    </div>
+
+            </header>
+
+
+
+
+            {% for article in son %}
+                <div class="btx-main btx-main--single">
+                    <div class="btx-main-wrapper">
+                        <section class="btx-section js-dynamic-navbar btx-p-border-border" data-index="0">
+                            <div class="btx-background" data-type="image" data-parallaxspeed="2" data-contentfade="" data-mobileparallax="">
+                                <div class="btx-background-overlay btx-p-bg-bg" style="background-color:#f5f5f5; opacity:1;"></div>
+                            </div>
+                            <div class="btx-section-wrapper" style="padding-top:0px; padding-bottom:80px;">
+                                <div class="btx-container">
+                                    <div class="btx-row btx-row--main">
+                                        <div class="btx-col-12">
+
+                                            <div class="btx-item js-item-product btx-product btx-product--standard btx-left-align btx-product-layout--carousel woocommerce btx-product-no-rating">
+                                                <!-- 1 Palasa Divlerler icinde 3 dene elan . Forun birini burda aciriq birinide aldaki divde-->
+
+                                                <div class="btx-product-content" style="margin:0 -10px;  padding:0px;" data-display="4" data-scroll="1" data-loop="true">
+                                                    {% for art in article %}
+
+
+                                                    <article class="btx-entry  btx-col-3 post-1516 product type-product status-publish has-post-thumbnail product_cat-top product_tag-t-shirt first outofstock featured shipping-taxable purchasable " style="padding:0 10px;" data-filter="Top">
+                                                        <div class="btx-entry-inner card btx-product-entry-content btx-with-background" style="background-color:rgba(255,255,255,1);">
+                                                            <div class="btx-product-entry-media btx-product-entry-media--still">
+                                                                <a class="btx-product-entry-image" {% if art.user %} href="/user/elan/{{art.id}}" {% else %}href="/sticker/{{art.id}}"{% endif %}>
+
+                                                                    <img width="624" height="800" src="{{art.image.url}}" class="attachment-shop_catalog size-shop_catalog wp-post-image" style="max-height:220px; min-height:220px; max-width:390px; min-width:280; object-fit:cover" alt="{{ art.title }}" title="{{ art.title }}" />
+                                                                </a>
+
+                                                            </div>
+
+                                                            <div class="p-3">
+                                                                <div class="mb-2">
+
+
+                                                                    <strong class="text-muted"><b>{{art.title |truncatechars:25}}</b></strong>
+                                                                </div>
+                                                                <div class="d-flex align-items-center">
+                                                                    <strong class="h4 m-0">⋔{{art.qiymet}}</strong>
+                                                                    <!-- Bura Button veya bawqi yazi qoya bilersen burda bax adinda button varidi -->
+
+                                                                </div>
+
+                                                            </div>
+                                                            <div class="container">
+                                                                        <small><b>{{art.created_date}}</b></small>
+                                                            </div>
+
+                                                        </div>
+                                                    </article>
+                                                    {% endfor %}
+
+
+
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+                    </div>
+                </div>
+
+                {% endfor %}
+                <form method="get">
+
+
+                <nav aria-label="Page navigation example">
+
+                    <ul class="pagination justify-content-center">
+                        <li class="page-item">
+                            <a class="page-link"><button name="page"  value="{{number}} azalt">Əvvəlki Səyfə</button></a>
+                        </li>
+
+                        <li class="page-item">
+                            <a class="page-link"><button  name="page" value="{{number}} artir">Sonrakı Səyfə</button></a>
+                        </li>
+                    </ul>
+                </nav>
+
+            </form>
+
+
+        </main>
+        {% else %}
+
+        {% endif %}
+        {% else %}
+        <br><br><br><br><br><br><br>
+        <div class="container">
+            <div class="alert alert-warning" role="alert">
+            <h4 class="alert-heading">Oops Bağışlayın !!</h4>
+            <p>Axtarış etdiyiniz bölmədə və yaxud catiqoriyada elan yoxdur.</p>
+            <hr>
+            <p class="mb-0"></p>
+            </div>
+        </div>
+
+
+{% endif %}
+
+
+
+    </div>
+
+

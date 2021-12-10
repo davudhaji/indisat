@@ -1,0 +1,1 @@
+wep: gunicorn isaBlog.wsgi 

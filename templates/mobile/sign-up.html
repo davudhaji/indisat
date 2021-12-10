@@ -1,0 +1,37 @@
+{% extends 'mobile/layout.html' %}
+{% load socialaccount %}
+{% providers_media_js %}
+{% block body %}
+
+	<!-- sign up -->
+	<div class="sign-up segments-page">
+		<div class="container">
+		<div class="signup-contents">
+			<div class="pages-title">
+				<h3>Qeydiyyatdan Keç</h3>
+			</div>
+			<form method="post">
+                {% csrf_token %}
+				<input type="text" placeholder="İsdifadəçi adı">
+				<input type="email" placeholder="Email">
+				<input type="password" placeholder="Parol">
+				<input type="password" placeholder="Təkrar Parol">
+				<button class="button"><i class="fa fa-send"></i>Qeydiyyatdan keç</button>
+			</form>
+			<div class="social-login">
+				<h5>Bunların biri ilə daxil ol</h5>
+				<div class="row">
+					<div class="col s6">
+						<a href="{% provider_login_url "facebook" method="oauth2" %}"><button class="button-full button-facebook">Facebook</button></a>
+					</div>
+					<div class="col s6">
+						<a href="{% provider_login_url "google" %}"><button class="button-full button-google">Google</button></a>
+					</div>
+				</div>
+
+			</div>
+		</div>
+		</div>
+	</div>
+	<!-- end sign up -->
+{% endblock body %}

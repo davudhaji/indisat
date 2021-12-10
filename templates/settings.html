@@ -1,0 +1,45 @@
+{% extends 'layoutdash.html' %}
+{% load static %}
+
+<br>
+{% block body %}<br><br><br><br><br>
+    <style>
+    .formclass{
+        padding-left:80px;
+        padding-right:80px;
+    }
+ 
+    </style>
+
+
+    <div class="formclass">
+     <form method="POST"  enctype="multipart/form-data">
+
+        <div class="container">
+
+            {% csrf_token %}
+            {{ form.media }}
+            {{ form.as_p}}
+
+
+        
+        
+
+        
+
+
+
+        <br><br>
+        <a href="{% url 'user:yoxla' %}"><p>Parolu Deyisdir</p></a>
+        <br><br>
+       
+
+
+
+        <button type="submit" class="btnx" style="border-radius:2px; border-width:1px;"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Yenile</font></font></button>
+
+        </form> </div>
+        
+        
+    </div>
+{% endblock body %}

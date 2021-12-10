@@ -1,0 +1,157 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="zxx">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="icon" href="images/favicon.png">
+    <title>Indisat.az - Rahat Sat!</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">   <!-- <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">-->
+    <link rel="stylesheet" href="{% static 'mobile/css/materialize.css' %}">
+    <link rel="stylesheet" href="{% static 'mobile/css/loaders.css' %}">
+    <link rel="stylesheet" href="{% static 'mobile/css/line-awesome.css' %}">
+    <link rel="stylesheet" href="{% static 'mobile/css/line-awesome-font-awesome.css' %}">
+    <link rel="stylesheet" href="{% static 'mobile/css/owl.carousel.min.css' %}">
+    <link rel="stylesheet" href="{% static 'mobile/css/owl.theme.default.min.css' %}">
+    <link rel="stylesheet" href="{% static 'mobile/css/style.css' %}">
+
+</head>
+{% if messages %}
+            <br><br><br><br>
+            <div class="container">
+            {% for message in messages %}
+          
+
+            {%if message.tags == "warning"  %} 
+                <div class="alert alert-danger">{{ message }}</div>
+
+            
+            {% else %} 
+                <div class="alert alert-{{message.tags}}">{{ message }}</div>
+            
+
+            {% endif %}
+            </div>
+            
+
+            {% endfor %}
+     
+{% endif %}
+
+<body>
+<br>
+
+
+    <!-- navbar -->
+    <div class="navbar">
+        <div class="container">
+            <div class="row">
+                <div class="col s6">
+                    <div class="content-left">
+                        <a href="/" data-activates="slide-out" class="sidebar"><i class="fa fa-bars"></i></a>
+                        <a href="/"><h1>İndisat.az</h1></a>
+                    </div>
+                </div>
+                <div class="col s6">
+                    <div class="content-right">
+                        <a href="#slide-out-right" data-activates="slide-out-right" class="sidebar-search"><i class="fa fa-search"></i></a>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="sidebar-panel">
+        <ul id="slide-out" class="collapsible side-nav">
+            <li>
+                <div class="user-view">
+                    <div class="background">
+                        <img src="images/bg-user.jpg" alt="">
+                    </div>
+                    <img class="circle responsive-img" src="{% static 'upload/alver22.png' %}" alt="">
+                    <span class="white-text name">Indisat.az</span>
+                </div>
+            </li>
+            <li><a href="/"><i class="fa fa-home"></i>Ana Səyfə</a></li>
+            
+            {% if request.user.is_authenticated %}
+                <li><a href="/user/sticker/"><i class="fa fa-plus-square-o"></i>Elan Yerləşdir</a></li>
+                <li><a href="/user/dashboard/"><i class="fa fa-tachometer" aria-hidden="true"></i> Elanlarım</a></li>            
+                <li><a href="/user/logout/"><i class="fa fa-share"></i>Çıxış et</a></li>            
+            
+            {% else %}
+                <li><a href="/user/elan"><i class="fa fa-plus-square-o"></i>Elan Yerləşdir</a></li>
+                <li><a href="/user/register/"><i class="fa fa-user-plus"></i>Qeydiyyatdan keç</a></li>
+
+                <li><a href="/user/login/"><i class="fa fa-sign-in"></i>Daxil Ol</a></li>      
+            {% endif %}
+            
+            <li><a href="/article/categorys/"><i class="fa fa-file"></i>Katiqoriyalar</a></li>      
+
+            </ul>
+    </div>
+    <div class="sidebar-panel sidebar-right-search">
+        <ul id="slide-out-right" class="collapsible side-nav">
+            <li>
+                <div class="form">
+
+                    <form role="search" method="get" action="/">
+                    {% csrf_token %}
+
+                    <input type="search" placeholder="Axtar" value name="s"> 
+                    <button class="button" style="margin-top:0px;"><i class="fa fa-search"></i></button>
+                    
+                    </form>
+                </div>
+                <div class="clear"></div>
+            </li>
+            <li>
+                <h5>Popular Search</h5></li>
+            <!--<li><a href="">Football</a></li>
+            <li><a href="">Lemon</a></li>
+            <li><a href="">Canon</a></li>
+            <li><a href="">Laptop</a></li>
+            <li><a href="">Pizza</a></li>
+            <li><a href="">Sport</a></li> -->
+        </ul>
+    </div>
+
+
+    {% block body %}
+
+    {% endblock body %}
+
+
+
+
+
+
+    
+    <!-- end product home -->
+
+    <!-- footer -->
+    <footer>
+        <div class="container">
+            <a href="/"><h1>INDISAT.AZ</h1></a>
+            <ul>
+                <li><a href=""><i class="fa fa-facebook"></i></a></li>
+                <li><a href=""><i class="fa fa-twitter"></i></a></li>
+                <li><a href=""><i class="fa fa-google"></i></a></li>
+                <li><a href="instagram.com/indisat.az"><i class="fa fa-instagram"></i></a></li>
+            </ul>
+            <p>Copyright © Bütün hüqüqlar qorunur</p>
+        </div>
+    </footer>
+    <!-- end footer -->
+
+    <script src="{% static 'mobile/js/jquery.min.js' %}"></script>
+    <script src="{% static 'mobile/js/materialize.js' %}"></script>
+    <script src="{% static 'mobile/js/owl.carousel.min.js' %}"></script>
+    <script src="{% static 'mobile/js/styleswitcher.js' %}"></script>
+    <script src="{% static 'mobile/js/main.js' %}"></script>
+
+</body>
+
+</html>

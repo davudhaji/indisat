@@ -1,0 +1,40 @@
+{% extends 'mobile/layout.html' %}
+{% load static %}
+{% load socialaccount %}
+{% providers_media_js %}
+{% block body %}
+<br>
+    	<!-- sign in -->
+	<div class="sign-in segments-page">
+		<div class="container">
+		<div class="signin-contents">
+			<div class="pages-title">
+				<h3>Daxil Ol</h3>
+			</div>
+			<form method="post">
+                {% csrf_token %}
+
+				<input type="text" name="username" placeholder="İsdifadəçi adı" required>
+				<input type="password" name="pass" placeholder="Parol" required>
+				<button class="button"><i class="fa fa-send"></i>Daxil Ol</button><br><br>
+			</form>
+			<a href="/user/register/"><button class="button"><i class="fa fa-registered" aria-hidden="true"></i>Qediyyatdan keç </button></a>
+			<div class="social-login">
+				<h5>Sosial şəbəkələrin biri ilə daxil ol:</h5>
+				<div class="row">
+					<div class="col s6">
+						<a href="{% provider_login_url "facebook" method="oauth2" %}"><button class="button-full button-facebook">Facebook</button></a>
+					</div>
+					<div class="col s6">
+						<a href="{% provider_login_url "google" %}"><button class="button-full button-google">Google+</button></a>
+					</div>
+				</div>
+
+			</div>
+		</div>
+		</div>
+	</div>
+	<!-- end sign in -->
+
+
+{% endblock body %}

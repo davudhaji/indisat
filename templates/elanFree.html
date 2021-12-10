@@ -1,0 +1,420 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="tr-TR" prefix="og: http://ogp.me/ns#">
+<head>
+    <!-- META TAGS -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <!-- LINK TAGS -->
+
+    <title>AlVer.az - Azerbaycanin Online Elan Sayti</title>
+	<link rel="icon" type="image/x-icon" href="{% static 'upload/alverust.png'%}" />
+
+    <link rel='stylesheet' href="{% static 'css/layerslider.css'%}" type='text/css' media='all' />
+    <link rel='stylesheet' href="{%static 'css/settings.css'%}" type='text/css' media='all' />
+    <link rel='stylesheet' href="{%static 'css/woocommerce-layout.css'%}" type='text/css' media='all' />
+    <link rel='stylesheet' href="{%static 'css/woocommerce-smallscreen.css'%}" type='text/css' media='only screen and (max-width: 768px)' />
+    <link rel='stylesheet' href="{%static 'css/woocommerce.css'%}" type='text/css' media='all' />
+    <link rel='stylesheet' href="{%static 'js/mediaelement/mediaelementplayer.min.css'%}" type='text/css' media='all' />
+    <link rel='stylesheet' href="{%static 'js/mediaelement/wp-mediaelement.min.css'%}" type='text/css' media='all' />
+    <link rel='stylesheet' href="{%static 'css/main.min.css'%}" type='text/css' media='all' />
+    <link rel='stylesheet' href="{%static 'css/style-customabae.css'%}" type='text/css' media='all' />
+    <link rel='stylesheet' href="{%static 'css/configs.css'%}" type='text/css' media='all' />
+
+    <link rel='stylesheet' href="{%static 'js/wp-google-maps-pro/css/wpgmza_style_pro.css'%}" type='text/css' media='all' />
+    <link rel='stylesheet' href="{%static 'js/wp-google-maps-pro/css/data_table_front.css'%}" type='text/css' media='all' />
+
+	<link rel="icon" type="image/x-icon" href="upload/bateaux-icon.png" />
+</head>
+
+<body class="single single-product postid-980 woocommerce woocommerce-page btx-layout btx-layout--wide btx-layout-responsive btx-layout--topnav btx-layout--fixednav" data-scheme="light" data-layout="wide">
+
+    {% include 'includes/nvbr.html' %}
+
+        <div class="btx-content btx-content--no-header">
+            <div class="btx-content-wrapper">
+                <nav class="woocommerce-breadcrumb">
+                    <div class="btx-container"><a href="index.html">Home</a><span class="fa fa-angle-right"></span><a href="#">Shoes</a><span class="fa fa-angle-right"></span>{{article.title}}</div>
+                </nav>
+                <div class="btx-container">
+                    <main id="main" class="btx-single-product btx-main btx-main--single">
+
+                        <div itemscope itemtype="http://schema.org/Product" id="product-980" class="post-980 product type-product status-publish has-post-thumbnail product_cat-shoes product_tag-formalwear product_tag-shoes first instock sale shipping-taxable purchasable product-type-simple">
+                            <div class="btx-single-product-content thumbnail-bottom">
+
+                                <span class="onsale">Sale!</span>
+                                <div class="images btx-product-gallery btx-product-gallery--bottom btx-gallery--carousel" data-popup="">
+                                    <div class="btx-gallery-content">
+                                        <div class="btx-gallery-item">
+                                            <div class="btx-gallery-body">
+                                                <div class="btx-gallery-media">
+                                                    <img class="btx-image-normal" src="{{article.image.url}}" alt="" />
+                                                    <img class="btx-image-zoom" src="{{article.image.url}}" alt="" />
+                                                </div>
+                                            </div>
+                                        </div>
+                                        {% if articleImages %}
+                                        
+
+                                        {% for img in articleImages %}
+                                                        <div class="btx-gallery-item">
+                                                        <div class="btx-gallery-body">
+                                                            <div class="btx-gallery-media">
+                                                                <img class="btx-image-normal" src="{{img.product_image.url}}" alt="" />
+                                                                <img class="btx-image-zoom" src="{{img.product_image.url}}" alt="" />
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                        {% endfor %}                                      
+
+
+                                        {% endif %}
+                                                
+
+                                    </div>
+                                        <div class="thumbnails columns-4 btx-gallery-thumbnail btx-gallery-thumbnail--bottom" data-thumbnail="4">
+                                            <div class="btx-gallery-thumbnail-item btx-col-3">
+                                                <img width="180" height="180" src="{{article.image.url}}" class="attachment-shop_thumbnail size-shop_thumbnail wp-post-image" alt="shop-oxford-01" srcset="{{article.image.url}}" sizes="(max-width: 180px) 100vw, 180px" /> </div>
+                                            {% if articleImages %}
+                                                
+                                                {% for img in articleImages %}
+                                                        <div class="btx-gallery-thumbnail-item btx-col-3">
+                                                        <img width="180" height="180" src="{{img.product_image.url}}" class="attachment-shop_thumbnail size-shop_thumbnail wp-post-image" alt="shop-oxford-01" srcset="{{img.product_image.url}}" sizes="(max-width: 180px) 100vw, 180px" /> </div>
+                                        
+                                                {% endfor %}
+                                                
+
+                                            {% endif %}
+                                            
+                                        </div>
+                                </div>
+
+                                <div class="summary entry-summary">
+
+                                    <h1 itemprop="name" class="product_title entry-title">{{article.title}}</h1>
+                                    <div class="woocommerce-product-rating" itemprop="aggregateRating" itemscope itemtype="http://schema.org/AggregateRating">
+                                        <div class="star-rating" title="Rated 5 out of 5">
+                                            <span style="width:100%">
+                        <strong itemprop="ratingValue" class="rating">5</strong> out of <span itemprop="bestRating">5</span> based on <span itemprop="ratingCount" class="rating">2</span> customer ratings </span>
+                                        </div>
+                                        <a href="#reviews" class="woocommerce-review-link" rel="nofollow">(<span itemprop="reviewCount" class="count">2</span> reviews)</a>
+                                    </div>
+
+                                    <div itemprop="offers" itemscope itemtype="http://schema.org/Offer">
+
+                                        <p class="price"><span class="woocommerce-Price-currencySymbol">&#8916;</span>{{article.qiymet}}</p>
+
+                                        <meta itemprop="price" content="199" />
+                                        <meta itemprop="priceCurrency" content="USD" />
+                                        <link itemprop="availability" href="http://schema.org/InStock" />
+
+                                    </div>
+                                    <div >
+                                    <p class="price">
+                                        <b>{{article.content|safe}}</b>
+                                    </p>
+                                    </div>
+
+                                            <br>
+
+                                            <br><br><br><br>
+                                            <p>Elanin Qoyulma Tarixi:<b>{{article.created_date}}</b></p>
+
+                                            <br>
+
+                                    <div class="product_meta">
+
+                                        <div class="sku_wrapper">
+                                            <div class="btx-product-meta-label"><b>Adi</b></div>
+                                            <span class="sku" itemprop="sku"><strong><b>{{article.author.first_name}}</b></strong></span>
+                                        </div>
+
+                                        <!-- Make Change here -->
+                                        <div class="posted_in">
+                                            <div class="btx-product-meta-label"><b>Nomre</b></div><strong><b>{{article.nomre}}</b></strong></div>
+                                        <div class="tagged_as">
+                                            <div class="btx-product-meta-label"><b>Email</b></div><strong><b> {{article.author.email}}</b></strong></div>
+                                        <!-- End Change -->
+
+                                    </div>
+<br><br><br>
+                                    
+                                    <div class="btx-product-share btx-share">
+                                        <ul class="btx-social-share btx-social-share--icon">
+                                            <li class="btx-p-border-border btx-share-item">
+                                                <a href="#" class="js-share btx-social-facebook btx-social-item--color">
+                                                    <span class="btx-icon btx-icon--without-hover btx-icon--plain btx-icon--small">
+                                                        <span class="btx-icon-normal btx-icon-plain btx-p-brand-color" >
+                                                            <i class="fa fa-facebook"></i>
+                                                        </span>
+                                                    </span>
+                                                </a>
+                                            </li>
+                                            <li class="btx-p-border-border btx-share-item">
+                                                <a href="#" class="js-share btx-social-twitter btx-social-item--color">
+                                                    <span class="btx-icon btx-icon--without-hover btx-icon--plain btx-icon--small">
+                                                        <span class="btx-icon-normal btx-icon-plain btx-p-brand-color" >
+                                                            <i class="fa fa-twitter"></i>
+                                                        </span>
+                                                    </span>
+                                                </a>
+                                            </li>
+                                            <li class="btx-p-border-border btx-share-item">
+                                                <a href="#" class="js-share btx-social-pinterest btx-social-item--color">
+                                                    <span class="btx-icon btx-icon--without-hover btx-icon--plain btx-icon--small">
+                                                        <span class="btx-icon-normal btx-icon-plain btx-p-brand-color" >
+                                                            <i class="fa fa-pinterest"></i>
+                                                        </span>
+                                                    </span>
+                                                </a>
+                                            </li>
+                                            <li class="btx-p-border-border btx-share-item">
+                                                <a href="#" class="js-share btx-social-google-plus btx-social-item--color">
+                                                    <span class="btx-icon btx-icon--without-hover btx-icon--plain btx-icon--small">
+                                                        <span class="btx-icon-normal btx-icon-plain btx-p-brand-color" >
+                                                            <i class="fa fa-google-plus"></i>
+                                                        </span>
+                                                    </span>
+                                                </a>
+                                            </li>
+                                            <li class="btx-p-border-border btx-share-item">
+                                                <a href="#" class="js-share btx-social-tumblr btx-social-item--color">
+                                                    <span class="btx-icon btx-icon--without-hover btx-icon--plain btx-icon--small">
+                                                        <span class="btx-icon-normal btx-icon-plain btx-p-brand-color" >
+                                                            <i class="fa fa-tumblr"></i>
+                                                        </span>
+                                                    </span>
+                                                </a>
+                                            </li>
+                                            <li class="btx-p-border-border btx-share-item">
+                                                <a href="#" class="js-share btx-social-email btx-social-item--color">
+                                                    <span class="btx-icon btx-icon--without-hover btx-icon--plain btx-icon--small">
+                                                        <span class="btx-icon-normal btx-icon-plain btx-p-brand-color" >
+                                                            <i class="fa fa-envelope"></i>
+                                                        </span>
+                                                    </span>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+
+                                </div>
+                                <!-- .summary -->
+                            </div>
+
+                            <div class="woocommerce-tabs wc-tabs-wrapper btx-item btx-tab js-item-tab btx-tab--top btx-tab--underline">
+                                <ul class="btx-tab-nav">
+
+                                    <li class="description_tab active">
+
+                                        <a class="btx-tab-nav-title btx-s-text-color" href="#tabdescription">
+                                Description                 </a>
+                                    </li>
+
+                                   
+
+                                </ul>
+                                <div class="btx-tab-body btx-p-border-border">
+
+                                    <div class="btx-tab-content active" data-name="#tabdescription">
+
+                                        <div class="btx-tab-pane">
+
+                                            <h2>{{article.title}}</h2>
+
+                                            <p>{{article.content|safe}}</p>
+                                            <br><br>
+                                            <p>Elanin Qoyulma Tarixi:<b>{{article.created_date}}</b></p>
+                                        </div>
+                                    </div>
+
+                                    
+
+                                </div>
+                            </div>
+
+                            <div class="related products btx-product btx-product--standard btx-product-layout--grid">
+                                <div class="btx-heading btx-heading--default btx-heading--underline btx-p-border-border btx-s-text-border">
+                                    <h3 class="btx-heading-text  btx-s-text-color">Related Products</h3></div>
+                                <div class="btx-product-content btx-left-align" data-display="4" data-indicator="false">
+
+                                    <article class="btx-entry btx-col-3 btx-entry-light-scheme post-984 product type-product status-publish has-post-thumbnail product_cat-neckwear product_tag-formalwear product_tag-tie  instock shipping-taxable purchasable product-type-simple">
+                                        <div class="btx-entry-inner btx-product-entry-content ">
+                                            <div class="btx-product-entry-media">
+
+                                                <a class="btx-product-entry-image" href="#">
+
+                                                    <img width="624" height="800" src="upload/shop-bowtie-01-624x800.jpg" class="attachment-shop_catalog size-shop_catalog wp-post-image" alt="shop-bowtie-01" title="shop-bowtie-01" />
+                                                    <div class="btx-product-hover-image btx-p-bg-bg">
+                                                        <img src="upload/shop-bowtie-02-731x1024.jpg" alt="" width="731" height="1024"  /> </div>
+                                                </a>
+
+                                            </div>
+
+                                            <div class="btx-product-entry-info">
+                                                <div class="btx-product-entry-info-wrapper">
+                                                    <div class="btx-product-entry-info-inner">
+
+                                                        <h4 class="btx-product-entry-title btx-secondary-font">
+                                                            <a class="btx-s-text-color" href="#">Silk Bow Tie</a>
+                                                        </h4>
+
+                                                        <div class="btx-product-entry-meta">
+
+                                                            <span class="price"><span class="woocommerce-Price-amount amount"><span class="woocommerce-Price-currencySymbol">&#36;</span>89.00</span>
+                                                            </span>
+
+                                                        </div>
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </article>
+
+                                    <article class="btx-entry last btx-col-3 btx-entry-light-scheme post-988 product type-product status-publish has-post-thumbnail product_cat-accessories product_tag-cufflinks product_tag-formalwear first instock shipping-taxable purchasable product-type-simple">
+                                        <div class="btx-entry-inner btx-product-entry-content ">
+                                            <div class="btx-product-entry-media">
+
+                                                <a class="btx-product-entry-image" href="#">
+
+                                                    <img width="624" height="800" src="upload/shop-cufflinks-01-624x800.jpg" class="attachment-shop_catalog size-shop_catalog wp-post-image" alt="shop-cufflinks-01" title="shop-cufflinks-01" />
+                                                    <div class="btx-product-hover-image btx-p-bg-bg">
+                                                        <img src="upload/shop-cufflinks-02-731x1024.jpg" alt="" width="731" height="1024"  /> </div>
+                                                </a>
+
+                                            </div>
+
+                                            <div class="btx-product-entry-info">
+                                                <div class="btx-product-entry-info-wrapper">
+                                                    <div class="btx-product-entry-info-inner">
+
+                                                        <h4 class="btx-product-entry-title btx-secondary-font">
+                                                            <a class="btx-s-text-color" href="#">Cufflinks</a>
+                                                        </h4>
+
+                                                        <div class="btx-product-entry-meta">
+
+                                                            <span class="price"><span class="woocommerce-Price-amount amount"><span class="woocommerce-Price-currencySymbol">&#36;</span>249.00</span>
+                                                            </span>
+
+                                                        </div>
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </article>
+
+                                </div>
+                            </div>
+
+                            <meta itemprop="url" content="index.html" />
+
+                        </div>
+                        <!-- #product-980 -->
+
+                    </main>
+
+                </div>
+
+            </div>
+        </div>
+
+        </div>
+<section class="btx-section js-dynamic-navbar btx-p-border-border btx-dark-scheme" data-index="1" data-scheme="dark">
+                            <div class="btx-background" data-type="image" data-parallaxspeed="0" data-contentfade="" data-mobileparallax="">
+                                <div class="btx-background-overlay btx-p-bg-bg" style="background-color:#1d1d1d; opacity:1;"></div>
+                            </div>
+                            <div class="btx-section-wrapper" style="padding-top:30px; padding-right:40px; padding-left:40px; padding-bottom:30px;">
+                                <div class="btx-container--fullwidth">
+                                    <div class="btx-row btx-row--main">
+                                        <div class="btx-col-6">
+
+                                            <div class="btx-item js-item-text btx-text btx-left-align btx-primary-font btx-center-align-responsive">
+                                                <div class="btx-row" style="margin:0 -30px;">
+
+                                                    <div class="btx-text-content btx-col-12" style="padding:0 30px;">
+                                                        <div class="btx-text-content-inner">
+                                                            <span class="font-style" style="font-size: 13px;"><span style="color: rgb(255, 255, 255);">© 2020 All rights reserved.</span></span>
+                                                            <span class="font-style" style="font-size: 13px;"><span style="color: rgb(255, 255, 255);">Founder <b>Haji Davud</b>.</span></span>
+                                                        </div>
+                                                    </div>
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="btx-col-6">
+
+                                            <div class="btx-item js-item-social btx-social btx-social--plain btx-right-align btx-center-align-responsive">
+                                                
+                                                <div class="btx-social-inner">
+                                                    <a href="http://facebook.com/" class="btx-social-item btx-social-facebook" target="_blank">
+                                                        <span class="btx-icon btx-icon--with-hover btx-icon--plain btx-icon--hover-plain btx-icon--small">
+                                                            <span class="btx-icon-normal btx-icon-plain btx-p-brand-color" style="color:#ffffff;">
+                                                                <i class="fa fa-facebook"></i>
+                                                            </span>
+                                                            <span class="btx-icon-hover btx-icon-plain btx-s-brand-color" style="color:#01a2dd;">
+                                                                <i class="fa fa-facebook"></i>
+                                                            </span>
+                                                        </span>
+                                                    </a>
+                                                    <a href="http://twitter.com/" class="btx-social-item btx-social-twitter" target="_blank">
+                                                        <span class="btx-icon btx-icon--with-hover btx-icon--plain btx-icon--hover-plain btx-icon--small">
+                                                            <span class="btx-icon-normal btx-icon-plain btx-p-brand-color" style="color:#ffffff;">
+                                                                <i class="fa fa-twitter"></i>
+                                                            </span>
+                                                            <span class="btx-icon-hover btx-icon-plain btx-s-brand-color" style="color:#01a2dd;">
+                                                                <i class="fa fa-twitter"></i>
+                                                            </span>
+                                                        </span>
+                                                    </a>
+                                                    <a href="http://instagram.com/" class="btx-social-item btx-social-instagram" target="_blank">
+                                                        <span class="btx-icon btx-icon--with-hover btx-icon--plain btx-icon--hover-plain btx-icon--small">
+                                                            <span class="btx-icon-normal btx-icon-plain btx-p-brand-color" style="color:#ffffff;">
+                                                                <i class="fa fa-instagram"></i>
+                                                            </span>
+                                                            <span class="btx-icon-hover btx-icon-plain btx-s-brand-color" style="color:#01a2dd;">
+                                                                <i class="fa fa-instagram"></i>
+                                                            </span>
+                                                        </span>
+                                                    </a>
+                                                    <a href="http://youtube.com/" class="btx-social-item btx-social-youtube" target="_blank">
+                                                        <span class="btx-icon btx-icon--with-hover btx-icon--plain btx-icon--hover-plain btx-icon--small">
+                                                            <span class="btx-icon-normal btx-icon-plain btx-p-brand-color" style="color:#ffffff;">
+                                                                <i class="fa fa-youtube"></i>
+                                                            </span>
+                                                            <span class="btx-icon-hover btx-icon-plain btx-s-brand-color" style="color:#01a2dd;">
+                                                                <i class="fa fa-youtube"></i>
+                                                            </span>
+                                                        </span>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+
+    <script type='text/javascript' src="{%static 'js/jquery/jquery.js'%}"></script>
+    <script type='text/javascript' src="{%static 'js/jquery/jquery-migrate.min.js'%}"></script>
+
+    <script type='text/javascript' src="{%static 'js/jquery.themepunch.tools.min.js'%}"></script>
+    <script type='text/javascript' src="{%static 'js/jquery.themepunch.revolution.min.js'%}"></script>
+    <script type='text/javascript'>
+    /* <![CDATA[ */
+    var BateauxOptions = {"ajax_url":"{%static 'js/admin-ajax.html'%}"};
+    /* ]]> */
+    </script>
+
+    <script type='text/javascript' src="{%static 'js/mediaelement/mediaelement-and-player.min.js'%}"></script>
+    <script type='text/javascript' src="{%static 'js/mediaelement/wp-mediaelement.min.js'%}"></script>
+    <script type='text/javascript' src="{%static 'js/hoverIntent.min.js'%}"></script>
+    <script type='text/javascript' src="{%static 'js/jquery/ui/widget.min.js'%}"></script>
+    <script type='text/javascript' src="{%static 'js/main-vendors.min.js'%}"></script>
+    <script type='text/javascript' src="{%static 'js/main.min.js'%}"></script>
+
+
+</body>
+</html>
