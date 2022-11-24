@@ -117,7 +117,7 @@ services:
 #  esdata:
 #    driver: local
 
-networks:
-  default:
-    external:
-      name: nginx-proxy
+# networks:
+#   default:
+#     external:
+#       name: nginx-proxy
