@@ -309,7 +309,7 @@ def sticker(request):
         return redirect(reverse('post:productDetails',kwargs={"id":Sticker.id,"ad":"sticker"}))
 
     else:
-        return redirect(reverse('dynamic',kwargs={"id":Sticker.id}))
+        return redirect(reverse('dynamic'))
 
 def elan(request):
     if request.method == "POST":

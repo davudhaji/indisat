@@ -1,0 +1,22 @@
+# This is a sample build configuration for Python.
+# Check our guides at https://confluence.atlassian.com/x/x4UWN for more examples.
+# Only use spaces to indent your .yml configuration.
+# -----
+# You can specify a custom  docker image from Docker Hub as your build environment.
+image: python:3.7.3
+
+pipelines:
+  branches:
+    master: # master
+    - step:
+        name: Deploy to production
+        deployment: production
+        script: # master deployment
+          - ssh -tt $PROD_USER@$PROD_HOST 'cd '$APP_PATH' && git fetch origin && git reset --hard origin/master && docker-compose up --build -d && docker-cleanup && docker exec -it '$PROD_DOCKER_CONTAINER' bash -c "python manage.py makemigrations --merge --noinput && python manage.py migrate --noinput && python manage.py collectstatic --noinput"'
+
+    staging:
+    - step:
+        name: Deploy to staging
+        deployment: staging
+        script:
+        - ssh -tt $DEV_USER@$DEV_HOST 'cd '$APP_PATH' && git fetch origin && git reset --hard origin/staging && rm -rf .env && mv .test.env .env && docker-compose up --build -d && docker-cleanup && docker exec -it '$PROD_DOCKER_CONTAINER' bash -c "python manage.py makemigrations --merge --noinput && python manage.py migrate --noinput && python manage.py collectstatic --noinput"'
