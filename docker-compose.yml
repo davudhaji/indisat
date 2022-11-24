@@ -2,16 +2,16 @@ version: '3'
 
 services:
 
-  nginx:
-    image: nginx:latest
-    container_name: ng
-    ports:
-      - "8050:8050"
-      - "80:80"
-    volumes:
-      - ./config/nginx/:/etc/nginx/conf.d
-    depends_on:
-      - web
+  # nginx:
+  #   image: nginx:latest
+  #   container_name: ng
+  #   ports:
+  #     - "8050:8050"
+  #     - "80:80"
+  #   volumes:
+  #     - ./config/nginx/:/etc/nginx/conf.d
+  #   depends_on:
+  #     - web
 
   # postgres:
   #   container_name:  postgres-db
@@ -92,9 +92,9 @@ services:
     env_file: .env
     environment:
       - VIRTUAL_HOST=www.indisat.az
-      - VIRTUAL_PORT=8050
+      - VIRTUAL_PORT=80
       - TIMEOUT=300
-      - HTTP_PORT=8050
+      - HTTP_PORT=80
       - STATS_PORT=8051
       - LANG=C.UTF-8
       - LANG=en_US.UTF-8
@@ -105,7 +105,7 @@ services:
       - ./media:/code/media
       - ./static:/code/static
     ports:
-      - "8050:8050"
+      - "80:80"
     # links:
     #   - postgres
     # depends_on:
