@@ -108,10 +108,10 @@ services:
       - ./static:/code/static
     ports:
       - "8050:8050"
-    links:
-      - postgres
-    depends_on:
-      - "postgres"
+    # links:
+    #   - postgres
+    # depends_on:
+    #   - "postgres"
 
 #volumes:
 #  esdata:
