@@ -92,9 +92,9 @@ services:
     env_file: .env
     environment:
       - VIRTUAL_HOST=www.indisat.az
-      - VIRTUAL_PORT=80
+      - VIRTUAL_PORT=8000
       - TIMEOUT=300
-      - HTTP_PORT=80
+      - HTTP_PORT=8000
       - STATS_PORT=8051
       - LANG=C.UTF-8
       - LANG=en_US.UTF-8
@@ -105,7 +105,7 @@ services:
       - ./media:/code/media
       - ./static:/code/static
     ports:
-      - "80:80"
+      - "80:8000"
     # links:
     #   - postgres
     # depends_on:
