@@ -25,7 +25,7 @@ SECRET_KEY = '!px103825a4nb@zeo1+4m(h+zxix65dh6m8r$1@%xf8@vn&@b&'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['127.0.0.1','hacidavud.pythonanywhere.com','www.alveraz.tk','192.168.1.104','www.alver123.tk','alver123.tk','indisat.az','www.indisat.az']
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
