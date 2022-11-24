@@ -2,18 +2,18 @@ version: '3'
 
 services:
 
-#  nginx-proxy:
-#    image: jwilder/nginx-proxy
-#    container_name: nginx-proxy
-#    restart: "always"
-#    ports:
-#    - "80:80"
-#    volumes:
-#    - /var/run/docker.sock:/tmp/docker.sock:ro
-#    - ./nginx/vhost/:/etc/nginx/vhost.d:ro
-#    - ./nginx/conf.d/client_max_body_size.conf:/etc/nginx/conf.d/client_max_body_size.conf:ro
-#    - ./static/:/qmeter/static
-#    - ./media:/qmeter/media
+ nginx-proxy:
+   image: jwilder/nginx-proxy
+   container_name: nginx-proxy
+   restart: "always"
+   ports:
+   - "80:80"
+   volumes:
+   - /var/run/docker.sock:/tmp/docker.sock:ro
+   - ./nginx/vhost/:/etc/nginx/vhost.d:ro
+   - ./nginx/conf.d/client_max_body_size.conf:/etc/nginx/conf.d/client_max_body_size.conf:ro
+   - ./static/:/isaBlog/static
+   - ./media:/isaBlog/media
 
   # postgres:
   #   container_name:  postgres-db
