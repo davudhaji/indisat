@@ -2,17 +2,15 @@ version: '3'
 
 services:
 
-  # nginx:
-  #   image: nginx:latest
-  #   container_name: ng
-  #   ports:
-  #     - "8050:8050"
-  #     - "80:80"
-  #   volumes:
-  #     - ./config/nginx/:/etc/nginx/conf.d
-  #   depends_on:
-  #     - web
-
+  nginx:
+    build: ./nginx
+    ports:
+      - 80:80
+    depends_on:
+      - "web"
+    volumes:
+      - ./static/:/code/static/
+      - ./media/:/code/media/
   # postgres:
   #   container_name:  postgres-db
   #   image:           postgres:11
