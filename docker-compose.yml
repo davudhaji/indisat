@@ -116,9 +116,9 @@ services:
       - .:/code
       - ./media:/code/media
       - ./static:/code/static
-    # ports:
-    #   - "80:8000"
-    #   - "443:8000"
+    ports:
+      - "8000:8000"
+      - "443:443"
     # links:
     #   - postgres
     # depends_on:
