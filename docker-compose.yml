@@ -5,12 +5,14 @@ services:
   nginx:
     build: ./nginx
     ports:
+      - 443:443
       - 80:80
     depends_on:
       - "web"
     volumes:
       - ./static/:/code/static/
       - ./media/:/code/media/
+      - ./certs/:/code/certs/
   # postgres:
   #   container_name:  postgres-db
   #   image:           postgres:11
@@ -114,9 +116,6 @@ services:
       - .:/code
       - ./media:/code/media
       - ./static:/code/static
-    ports:
-      - "8000:8000"
-      - "443:443"
     # links:
     #   - postgres
     # depends_on:
