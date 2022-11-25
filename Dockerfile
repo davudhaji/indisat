@@ -28,3 +28,5 @@ WORKDIR ${APP_ROOT}
 RUN pip install --upgrade pip
 RUN pip install --no-cache-dir -r requirements.txt
 #RUN python manage.py collectstatic --noinput
+
+CMD [ "gunicorn", "--bind", "0.0.0.0", "-p", "8000",  "isaBlog.wsgi"  ]

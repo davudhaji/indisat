@@ -99,8 +99,6 @@ services:
     container_name: indisat
     build: .
     restart: "always"
-    command: ["uwsgi", "--ini", "/code/uwsgi.ini"]
-#    command: daphne --bind 0.0.0.0 --port 8050 aqms.asgi:application
     env_file: .env
     environment:
       - VIRTUAL_HOST=www.indisat.az
