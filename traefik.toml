@@ -1,0 +1,32 @@
+debug = true
+logLevel = "DEBUG"
+defaultEntryPoints = ["http","https"]
+
+[web]
+address = ":8081"
+
+[entryPoints]
+  [entryPoints.http]
+  address = ":80"
+  [entryPoints.https]
+  address = ":443"
+    [entryPoints.https.tls]
+
+[file]
+
+[backends]
+  [backends.backend1]
+    [backends.backend1.servers]
+      [backends.backend1.servers.server0]
+        url = "http://192.168.64.4:3000"
+
+[frontends]
+  [frontends.frontend1]
+  entryPoints = ["https"]
+  backend = "backend1"
+
+[[tls]]
+  entryPoints = ["https"]
+  [tls.certificate]
+    certFile = "/certs/Cloudflare.cert"
+    keyfile = "/certs/Cloudflare.key"

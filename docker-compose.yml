@@ -82,6 +82,18 @@ services:
   #   ports:
   #    - 9200:9200
   #    - 9300:9300
+
+  traefik:
+    image: traefik:1.7.0
+    container_name: traefik
+    restart: unless-stopped
+    ports:
+      - 80:8000
+      - 443:443
+    volumes:
+      - ./traefik.toml:/traefik.toml
+      - ./certs/:/certs/
+      - /var/run/docker.sock:/var/run/docker.sock
   
   web:
     container_name: indisat
@@ -104,9 +116,9 @@ services:
       - .:/code
       - ./media:/code/media
       - ./static:/code/static
-    ports:
-      - "80:8000"
-      - "443:8000"
+    # ports:
+    #   - "80:8000"
+    #   - "443:8000"
     # links:
     #   - postgres
     # depends_on:
