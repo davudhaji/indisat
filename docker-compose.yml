@@ -106,7 +106,7 @@ services:
       - ./static:/code/static
     ports:
       - "80:8000"
-      - "80:443"
+      - "443:443"
     # links:
     #   - postgres
     # depends_on:
