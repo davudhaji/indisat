@@ -99,6 +99,7 @@ services:
     container_name: indisat
     build: .
     restart: "always"
+    command: ["uwsgi", "--ini", "/code/uwsgi.ini"]
     env_file: .env
     environment:
       - VIRTUAL_HOST=www.indisat.az
