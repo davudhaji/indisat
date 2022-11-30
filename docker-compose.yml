@@ -10,9 +10,14 @@ services:
     depends_on:
       - "web"
     volumes:
-      - ./static/:/code/static/
-      - ./media/:/code/media/
-      - ./certs/:/code/certs/
+      - ./persistentdata/certbot/conf:/etc/letsencrypt 
+      - ./persistentdata/certbot/www:/var/www/certbot 
+
+  certbot:
+    image: certbot/certbot
+    volumes:
+      - ./persistentdata/certbot/conf:/etc/letsencrypt 
+      - ./persistentdata/certbot/www:/var/www/certbot 
   # postgres:
   #   container_name:  postgres-db
   #   image:           postgres:11
