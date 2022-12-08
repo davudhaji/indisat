@@ -122,7 +122,7 @@ services:
       - ./static:/code/static
 
     ports:
-      - "8000:8000"
+      - "80:8000"
     # links:
     #   - postgres
     # depends_on:
@@ -132,7 +132,7 @@ services:
 #  esdata:
 #    driver: local
 
-networks:
-  default:
-    external:
-      name: nginx-proxy
+# networks:
+#   default:
+#     external:
+#       name: nginx-proxy
